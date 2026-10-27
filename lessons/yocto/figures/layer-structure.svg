@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" role="img" aria-label="BitBake 엔진과 레이어들이 이미지 레시피로 모이는 구조">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#8aa0c6"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="30" fill="#cbd5e1" font-family="sans-serif" font-size="17" font-weight="bold" text-anchor="middle">엔진·레이어가 이미지 레시피로 모이는 구조</text>
+
+  <!-- Left stacked layers -->
+  <rect x="40" y="50" width="220" height="50" rx="10" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="150" y="70" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">meta (OE-Core)</text>
+  <text x="150" y="90" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">핵심 레시피 클래스</text>
+
+  <rect x="40" y="115" width="220" height="50" rx="10" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="150" y="135" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">meta-poky</text>
+  <text x="150" y="155" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">참조 배포판 설정</text>
+
+  <rect x="40" y="180" width="220" height="50" rx="10" fill="#111a2e" stroke="#b794f6" stroke-width="1.5"/>
+  <text x="150" y="200" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">BSP/벤더 레이어</text>
+  <text x="150" y="220" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">보드·차량 전용 레시피</text>
+
+  <rect x="40" y="250" width="220" height="50" rx="10" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="150" y="270" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">BitBake (엔진)</text>
+  <text x="150" y="290" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">태스크를 순서대로 실행</text>
+
+  <!-- Right stack -->
+  <rect x="460" y="120" width="220" height="60" rx="10" fill="#111a2e" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="570" y="144" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">이미지 레시피</text>
+  <text x="570" y="163" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">vehicle-image.bb</text>
+
+  <rect x="460" y="230" width="220" height="60" rx="10" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="570" y="254" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">최종 이미지</text>
+  <text x="570" y="273" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">보드에 플래시 가능</text>
+
+  <!-- Converging arrows -->
+  <line x1="260" y1="75" x2="460" y2="150" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="260" y1="140" x2="460" y2="150" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="260" y1="205" x2="460" y2="150" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="260" y1="275" x2="460" y2="150" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+
+  <line x1="570" y1="180" x2="570" y2="230" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+  <text x="585" y="210" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="start">bitbake vehicle-image</text>
+</svg>

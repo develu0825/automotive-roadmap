@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 370" role="img" aria-label="컴파일과 링크 과정: 소스 파일이 오브젝트 파일을 거쳐 실행 이미지로 합쳐지는 모습">
+  <defs>
+    <marker id="arrow-build" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#8aa0c6"/>
+    </marker>
+  </defs>
+  <text x="360" y="28" fill="#cbd5e1" font-family="sans-serif" font-size="17" font-weight="bold" text-anchor="middle">컴파일과 링크: 소스에서 실행 이미지까지</text>
+
+  <rect x="60" y="55" width="140" height="50" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="130" y="85" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">main.c</text>
+
+  <rect x="280" y="55" width="140" height="50" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="350" y="85" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">gpio.c</text>
+
+  <line x1="130" y1="105" x2="130" y2="175" stroke="#8aa0c6" stroke-width="2" marker-end="url(#arrow-build)"/>
+  <line x1="350" y1="105" x2="350" y2="175" stroke="#8aa0c6" stroke-width="2" marker-end="url(#arrow-build)"/>
+  <text x="240" y="140" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">컴파일</text>
+
+  <rect x="60" y="175" width="140" height="50" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="130" y="205" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">main.o</text>
+
+  <rect x="280" y="175" width="140" height="50" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="350" y="205" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">gpio.o</text>
+
+  <rect x="500" y="175" width="160" height="50" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="580" y="205" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">linker_script.ld</text>
+
+  <rect x="270" y="290" width="200" height="60" rx="8" fill="#111a2e" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="370" y="315" fill="#38bdf8" font-family="sans-serif" font-size="16" text-anchor="middle">firmware.elf</text>
+  <text x="370" y="335" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">(실행 이미지)</text>
+
+  <line x1="130" y1="225" x2="300" y2="290" stroke="#8aa0c6" stroke-width="2" marker-end="url(#arrow-build)"/>
+  <line x1="350" y1="225" x2="360" y2="290" stroke="#8aa0c6" stroke-width="2" marker-end="url(#arrow-build)"/>
+  <line x1="580" y1="225" x2="440" y2="290" stroke="#8aa0c6" stroke-width="2" marker-end="url(#arrow-build)"/>
+  <text x="680" y="235" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">링크</text>
+</svg>

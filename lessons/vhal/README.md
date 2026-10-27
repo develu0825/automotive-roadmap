@@ -63,6 +63,8 @@ interface VehicleHal {
 
 이 인터페이스 하나가 속도, 연료량, 공조 온도, 도어 잠금 상태 등 수백 가지 서로 다른 차량 신호를 전부 다룬다. 어떻게 이게 가능한지는 다음 섹션에서 다루는 "프로퍼티"라는 모델 덕분이다.
 
+![VHAL과 프레임워크, 차량 네트워크 사이의 통신 구조](figures/vhal-interface-flow.svg)
+
 ## VehicleProperty: 차량 신호를 표현하는 방법
 
 VHAL은 차량의 모든 신호를 하나의 통일된 모델로 표현한다. 바로 VehicleProperty라는 키-값 쌍이다. 속도든 연료량이든 공조 온도든, VHAL 입장에서는 전부 "프로퍼티 ID + 값"의 형태로 다뤄진다. 이렇게 하나의 모델로 통일해두면, 프레임워크는 신호 종류마다 다른 API를 익힐 필요 없이 똑같은 get/set/subscribe 호출만 알면 된다.
@@ -86,6 +88,8 @@ passengerTemp = get(HVAC_TEMPERATURE_SET, area = PASSENGER_SEAT) // 22.0
 ```
 
 이렇게 "프로퍼티 ID + area"라는 두 축으로 모든 차량 신호를 식별하는 모델 덕분에, VHAL 인터페이스 자체는 아주 단순하게 유지되면서도 실제로는 수백 개가 넘는 서로 다른 차량 신호를 전부 다룰 수 있게 된다. 정확한 상수 이름과 숫자 값은 AOSP 소스마다 조금씩 늘어나므로, 여기서는 개념과 대표 예시 위주로만 기억해 두는 것이 실제 개발에서도 더 유용하다.
+
+![VehicleProperty의 ID와 area 구성](figures/vhal-property-area-model.svg)
 
 ## get · set · subscribe: 프레임워크와 VHAL이 대화하는 방식
 

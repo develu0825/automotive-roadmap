@@ -40,6 +40,8 @@ Android Auto           : 폰에서 실행 + 차량 화면에 투사 (연산은 �
 Android Automotive OS  : 차량 헤드유닛에서 안드로이드 자체가 직접 구동 (연산은 차량)
 ```
 
+![Android Auto와 Android Automotive OS의 구조 차이](figures/aaos-vs-android-auto.svg)
+
 ## 하나의 안드로이드가 여러 화면을 동시에 책임집니다
 
 스마트폰 안드로이드는 화면 하나를 전제로 설계되어 있습니다. AAOS는 여기에 멀티 디스플레이 구조를 추가해서, 같은 안드로이드 프레임워크 인스턴스가 물리적으로 분리된 여러 디스플레이를 동시에 관리하도록 만들었습니다.
@@ -54,6 +56,8 @@ SoC 1개
  ├─ Display #1 (IVI)      → 운전자/동승자 공용, 서드파티 앱 허용
  └─ Display #2 (Rear seat, 선택) → 뒷좌석 승객용, 별도 사용자 세션
 ```
+
+![AAOS의 멀티 디스플레이와 occupant zone 구조](figures/aaos-multi-display-zones.svg)
 
 ## 운전자와 승객은 서로 다른 사용자입니다
 

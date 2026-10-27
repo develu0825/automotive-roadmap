@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 250" role="img" aria-label="전원 레일 시퀀싱 타이밍">
+  <text x="360" y="24" fill="#cbd5e1" font-family="sans-serif" font-size="17" font-weight="bold" text-anchor="middle">전원 레일 시퀀싱 타이밍</text>
+
+  <line x1="280" y1="50" x2="280" y2="210" stroke="#3a4d72" stroke-width="1.5" stroke-dasharray="4,4"/>
+  <line x1="400" y1="50" x2="400" y2="210" stroke="#3a4d72" stroke-width="1.5" stroke-dasharray="4,4"/>
+  <line x1="520" y1="50" x2="520" y2="210" stroke="#3a4d72" stroke-width="1.5" stroke-dasharray="4,4"/>
+
+  <text x="90" y="56" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">VDD_CORE</text>
+  <line x1="160" y1="70" x2="280" y2="70" stroke="#8aa0c6" stroke-width="2"/>
+  <line x1="280" y1="70" x2="640" y2="70" stroke="#38bdf8" stroke-width="3"/>
+
+  <text x="90" y="116" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">VDD_IO</text>
+  <line x1="160" y1="130" x2="400" y2="130" stroke="#8aa0c6" stroke-width="2"/>
+  <line x1="400" y1="130" x2="640" y2="130" stroke="#f59e0b" stroke-width="3"/>
+
+  <text x="90" y="176" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">VDD_DDR</text>
+  <line x1="160" y1="190" x2="520" y2="190" stroke="#8aa0c6" stroke-width="2"/>
+  <line x1="520" y1="190" x2="640" y2="190" stroke="#b794f6" stroke-width="3"/>
+
+  <line x1="160" y1="210" x2="160" y2="220" stroke="#8aa0c6" stroke-width="1.5"/>
+  <line x1="280" y1="210" x2="280" y2="220" stroke="#8aa0c6" stroke-width="1.5"/>
+  <line x1="400" y1="210" x2="400" y2="220" stroke="#8aa0c6" stroke-width="1.5"/>
+  <line x1="520" y1="210" x2="520" y2="220" stroke="#8aa0c6" stroke-width="1.5"/>
+  <line x1="640" y1="210" x2="640" y2="220" stroke="#8aa0c6" stroke-width="1.5"/>
+
+  <text x="160" y="234" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">0</text>
+  <text x="280" y="234" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">2</text>
+  <text x="400" y="234" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">4</text>
+  <text x="520" y="234" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">6</text>
+  <text x="640" y="234" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">8</text>
+  <text x="690" y="234" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">ms</text>
+</svg>

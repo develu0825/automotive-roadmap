@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 260" role="img" aria-label="BitBake 레시피의 do_fetch부터 do_package까지 태스크 흐름">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#8aa0c6"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="25" fill="#cbd5e1" font-family="sans-serif" font-size="17" font-weight="bold" text-anchor="middle">BitBake 태스크 흐름 (do_fetch → do_package)</text>
+
+  <!-- Row 1 -->
+  <rect x="30" y="60" width="150" height="50" rx="10" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="105" y="80" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">do_fetch</text>
+  <text x="105" y="100" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">소스 다운로드</text>
+
+  <rect x="200" y="60" width="150" height="50" rx="10" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="275" y="80" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">do_unpack</text>
+  <text x="275" y="100" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">압축 해제</text>
+
+  <rect x="370" y="60" width="150" height="50" rx="10" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="445" y="80" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">do_patch</text>
+  <text x="445" y="100" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">패치 적용</text>
+
+  <rect x="540" y="60" width="150" height="50" rx="10" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="615" y="80" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">do_configure</text>
+  <text x="615" y="100" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">빌드 설정</text>
+
+  <line x1="180" y1="85" x2="200" y2="85" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="350" y1="85" x2="370" y2="85" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="520" y1="85" x2="540" y2="85" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+
+  <!-- Connector down to row 2 -->
+  <polyline points="615,110 615,150 135,150 135,180" fill="none" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+
+  <!-- Row 2 -->
+  <rect x="60" y="180" width="150" height="50" rx="10" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="135" y="200" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">do_compile</text>
+  <text x="135" y="220" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">컴파일</text>
+
+  <rect x="285" y="180" width="150" height="50" rx="10" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="360" y="200" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">do_install</text>
+  <text x="360" y="220" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">설치 경로에 복사</text>
+
+  <rect x="510" y="180" width="150" height="50" rx="10" fill="#111a2e" stroke="#b794f6" stroke-width="1.5"/>
+  <text x="585" y="200" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">do_package</text>
+  <text x="585" y="220" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">패키지 포장</text>
+
+  <line x1="210" y1="205" x2="285" y2="205" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="435" y1="205" x2="510" y2="205" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+</svg>

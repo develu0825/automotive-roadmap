@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" role="img" aria-label="캐릭터 디바이스와 블록 디바이스의 접근 모델 비교">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#8aa0c6"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="30" fill="#cbd5e1" font-family="sans-serif" font-size="17" font-weight="bold" text-anchor="middle">캐릭터 디바이스와 블록 디바이스의 접근 모델</text>
+
+  <!-- Row 1: application -->
+  <rect x="60" y="55" width="220" height="60" rx="10" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="170" y="80" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">애플리케이션</text>
+  <text x="170" y="100" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">(open/read/write)</text>
+
+  <rect x="440" y="55" width="220" height="60" rx="10" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="550" y="80" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">애플리케이션</text>
+  <text x="550" y="100" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">(파일시스템)</text>
+
+  <!-- Arrows row1 -> row2 -->
+  <line x1="170" y1="115" x2="170" y2="165" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+  <text x="185" y="145" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="start">read()/write()</text>
+
+  <line x1="550" y1="115" x2="550" y2="165" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+  <text x="565" y="145" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="start">파일시스템 I/O 요청</text>
+
+  <!-- Row 2: driver -->
+  <rect x="60" y="165" width="220" height="60" rx="10" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="170" y="190" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">캐릭터 드라이버</text>
+  <text x="170" y="210" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">(file_operations)</text>
+
+  <rect x="440" y="165" width="220" height="60" rx="10" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="550" y="190" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">블록 드라이버</text>
+  <text x="550" y="210" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">(요청 큐/스케줄러)</text>
+
+  <!-- Arrows row2 -> row3 -->
+  <line x1="170" y1="225" x2="170" y2="275" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+  <text x="185" y="255" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="start">순차 스트림 전달</text>
+
+  <line x1="550" y1="225" x2="550" y2="275" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+  <text x="565" y="255" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="start">블록 번호 지정 접근</text>
+
+  <!-- Row 3: device -->
+  <rect x="60" y="275" width="220" height="60" rx="10" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="170" y="300" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">센서 /dev/temp0</text>
+  <text x="170" y="320" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">(스트림, 순차 접근)</text>
+
+  <rect x="440" y="275" width="220" height="60" rx="10" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="550" y="300" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">eMMC /dev/mmcblk0</text>
+  <text x="550" y="320" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">(블록, 임의 접근)</text>
+</svg>

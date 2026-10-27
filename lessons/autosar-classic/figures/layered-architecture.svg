@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 440" role="img" aria-label="AUTOSAR Classic 레이어드 아키텍처">
+  <defs>
+    <marker id="arrow3" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#8aa0c6"/>
+    </marker>
+    <marker id="arrow3b" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#f59e0b"/>
+    </marker>
+  </defs>
+  <text x="360" y="20" fill="#cbd5e1" font-family="sans-serif" font-size="17" font-weight="bold" text-anchor="middle">AUTOSAR Classic 레이어드 아키텍처</text>
+
+  <rect x="120" y="35" width="360" height="50" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="300" y="65" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">Application Layer (SWC)</text>
+
+  <line x1="300" y1="85" x2="300" y2="112" stroke="#8aa0c6" stroke-width="2" marker-end="url(#arrow3)"/>
+
+  <rect x="120" y="115" width="360" height="50" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="300" y="145" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">RTE (Runtime Environment)</text>
+
+  <line x1="300" y1="165" x2="300" y2="192" stroke="#8aa0c6" stroke-width="2" marker-end="url(#arrow3)"/>
+
+  <rect x="120" y="195" width="360" height="195" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="300" y="218" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">BSW (Basic Software)</text>
+
+  <rect x="150" y="232" width="300" height="42" rx="6" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="300" y="258" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">Services Layer</text>
+
+  <rect x="150" y="282" width="300" height="42" rx="6" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="300" y="308" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">ECU Abstraction Layer</text>
+
+  <rect x="150" y="332" width="300" height="42" rx="6" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="300" y="358" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">MCAL</text>
+
+  <rect x="510" y="195" width="170" height="195" rx="8" fill="#111a2e" stroke="#b794f6" stroke-width="1.5"/>
+  <text x="595" y="225" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">CDD</text>
+  <text x="595" y="250" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">(예외 통로)</text>
+
+  <line x1="480" y1="140" x2="510" y2="210" stroke="#f59e0b" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow3b)"/>
+  <line x1="595" y1="390" x2="595" y2="412" stroke="#f59e0b" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow3b)"/>
+  <text x="595" y="426" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">HW 직접 접근</text>
+</svg>

@@ -70,6 +70,8 @@ static struct block_device_operations emmc_fops = {
 
 정리하면, 캐릭터 디바이스는 "지금 흘러오는 값"을 다루는 스트림 지향 모델이고, 블록 디바이스는 "원하는 위치의 데이터"를 다루는 임의 접근 모델이다. 같은 I2C 버스에 연결된 장치라도 센서처럼 값을 스트림으로 읽는 장치는 캐릭터 디바이스에, eMMC처럼 블록 단위로 저장 공간을 다루는 장치는 블록 디바이스에 가깝다.
 
+![캐릭터 디바이스는 순차 스트림, 블록 디바이스는 임의 접근 모델](figures/char-vs-block-device.svg)
+
 ## 인터럽트: 하드웨어가 커널을 깨우는 방법
 
 CPU가 센서 값이 들어왔는지 계속 확인하러 다니는 방식, 즉 폴링(polling)은 CPU를 낭비한다. 대신 하드웨어가 "준비됐다"는 신호를 CPU에 직접 보내는 방식이 인터럽트(interrupt)다. CAN 컨트롤러가 프레임을 수신하면 지정된 IRQ(Interrupt Request) 번호로 인터럽트를 발생시키고, CPU는 하던 일을 잠시 멈추고 해당 인터럽트에 등록된 핸들러 함수를 실행한다.
@@ -91,6 +93,8 @@ request_irq(can_irq_num, can_irq_handler, IRQF_SHARED, "can0", dev);
 여기서 중요한 제약이 있다. 인터럽트 핸들러는 인터럽트 컨텍스트(interrupt context)에서 실행되는데, 이 컨텍스트에서는 sleep이 금지되고 가능한 짧고 빠르게 끝내야 한다. 뮤텍스(mutex) 획득처럼 잠들 수 있는 동작을 인터럽트 핸들러 안에서 하면 시스템 전체가 멈출 위험이 있다. 반면 일반적인 드라이버 코드가 `read`나 `write`로 호출될 때는 프로세스 컨텍스트(process context)에서 실행되며, 여기서는 sleep이 허용된다.
 
 이 제약 때문에 커널은 인터럽트 처리를 두 단계로 나누는 관례를 쓴다. 인터럽트가 발생한 그 순간 바로 실행되는 짧은 부분을 top half, 나중에 여유를 두고 처리해도 되는 나머지 작업을 bottom half라고 부른다. bottom half는 tasklet이나 workqueue, 또는 threaded IRQ로 구현한다. CAN 프레임을 받는 예시로 보면, top half(하드 IRQ 핸들러)는 레지스터에서 수신한 프레임 데이터만 빠르게 꺼내 내부 큐에 넣고 바로 리턴하고, 실제로 그 프레임을 SocketCAN 네트워크 스택에 전달하고 상위 프로토콜을 처리하는 무거운 작업은 workqueue로 미뤄서 처리한다. 이렇게 나누면 인터럽트 핸들러가 길어져서 다른 인터럽트를 놓치는 일을 막을 수 있다.
+
+![Top Half는 인터럽트 컨텍스트에서, Bottom Half는 프로세스 컨텍스트에서 처리된다](figures/interrupt-top-bottom-half.svg)
 
 동기화도 컨텍스트에 따라 수단이 달라진다. 인터럽트 컨텍스트에서 공유 데이터를 보호해야 할 때는 sleep하지 않는 스핀락(spinlock)을 쓰고, 프로세스 컨텍스트끼리의 동기화에는 sleep이 가능한 뮤텍스(mutex)를 쓰는 것이 일반적인 규칙이다.
 

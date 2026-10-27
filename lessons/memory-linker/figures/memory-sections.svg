@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" role="img" aria-label="메모리 섹션이 플래시와 RAM에 배치되는 모습과 데이터 섹션의 초기값 복사">
+  <defs>
+    <marker id="arrow-sec" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#b794f6"/>
+    </marker>
+  </defs>
+  <text x="360" y="28" fill="#cbd5e1" font-family="sans-serif" font-size="17" font-weight="bold" text-anchor="middle">메모리 섹션과 플래시/RAM 배치</text>
+
+  <rect x="60" y="60" width="260" height="250" rx="10" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="190" y="85" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">FLASH</text>
+
+  <rect x="80" y="110" width="220" height="55" rx="6" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="190" y="142" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">.text (코드)</text>
+
+  <rect x="80" y="175" width="220" height="55" rx="6" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="190" y="207" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">.rodata (상수)</text>
+
+  <rect x="80" y="240" width="220" height="55" rx="6" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="190" y="272" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">.data 초기값</text>
+
+  <rect x="400" y="60" width="260" height="250" rx="10" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="530" y="85" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">RAM</text>
+
+  <rect x="420" y="110" width="220" height="55" rx="6" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="530" y="142" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">.data (변수)</text>
+
+  <rect x="420" y="175" width="220" height="55" rx="6" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="530" y="207" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">.bss (0으로 초기화)</text>
+
+  <line x1="300" y1="268" x2="420" y2="138" stroke="#b794f6" stroke-width="2" marker-end="url(#arrow-sec)"/>
+  <text x="360" y="170" fill="#b794f6" font-family="sans-serif" font-size="14" text-anchor="middle">스타트업 시 복사</text>
+</svg>

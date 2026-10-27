@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 240" role="img" aria-label="AND, OR, NOT 게이트의 입력과 출력 예시">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#8aa0c6"/>
+    </marker>
+  </defs>
+  <text x="360" y="26" fill="#cbd5e1" font-family="sans-serif" font-size="17" font-weight="bold" text-anchor="middle">기본 논리 게이트: 입력 조합이 출력을 결정한다</text>
+
+  <rect x="105" y="60" width="150" height="80" rx="6" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="180" y="106" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">AND</text>
+  <line x1="40" y1="80" x2="105" y2="80" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+  <text x="25" y="84" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">A</text>
+  <line x1="40" y1="120" x2="105" y2="120" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+  <text x="25" y="124" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">B</text>
+  <line x1="255" y1="100" x2="300" y2="100" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+  <text x="313" y="104" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">Y</text>
+  <text x="180" y="175" fill="#38bdf8" font-family="sans-serif" font-size="15" text-anchor="middle">A=1, B=0 → Y=0</text>
+
+  <rect x="285" y="60" width="150" height="80" rx="6" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="360" y="106" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">OR</text>
+  <line x1="220" y1="80" x2="285" y2="80" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+  <text x="205" y="84" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">A</text>
+  <line x1="220" y1="120" x2="285" y2="120" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+  <text x="205" y="124" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">B</text>
+  <line x1="435" y1="100" x2="480" y2="100" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+  <text x="493" y="104" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">Y</text>
+  <text x="360" y="175" fill="#38bdf8" font-family="sans-serif" font-size="15" text-anchor="middle">A=1, B=0 → Y=1</text>
+
+  <rect x="465" y="60" width="150" height="80" rx="6" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="540" y="106" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">NOT</text>
+  <line x1="400" y1="100" x2="465" y2="100" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+  <text x="385" y="104" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">A</text>
+  <line x1="615" y1="100" x2="660" y2="100" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+  <text x="673" y="104" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">Y</text>
+  <text x="540" y="175" fill="#38bdf8" font-family="sans-serif" font-size="15" text-anchor="middle">A=1 → Y=0</text>
+</svg>

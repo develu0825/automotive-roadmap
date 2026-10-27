@@ -32,6 +32,8 @@ AUTOSAR Classic의 뼈대는 세 개의 큰 층으로 이루어진다. 가장 �
 
 BSW는 다시 네 부분으로 나뉜다. 가장 아래 마이크로컨트롤러 추상화 계층(MCAL, Microcontroller Abstraction Layer)은 MCU의 레지스터를 직접 다루는 드라이버들(ADC, PWM, CAN 드라이버, SPI 등)로, MCU가 바뀌면 이 층이 바뀐다. 그 위 ECU 추상화 계층(ECU Abstraction Layer)은 MCAL을 감싸서 "이 신호가 어느 핀, 어느 주변장치에 붙어 있는가" 같은 ECU 보드 수준의 배선 차이를 흡수한다. 그 위 서비스 계층(Services Layer)은 통신·메모리·진단·OS 같은 상위 서비스를 제공한다. 이 세 층과 별개로, 표준 구조에 억지로 끼워 맞추기 어려운 특수 하드웨어(예: 매우 빠른 타이밍이 필요한 센서)는 복합 장치 드라이버(CDD, Complex Device Driver)라는 예외 통로를 통해 여러 층을 가로질러 직접 접근할 수 있게 열어둔다.
 
+![AUTOSAR Classic의 Application/RTE/BSW 레이어드 아키텍처와 CDD 예외 통로](figures/layered-architecture.svg)
+
 ## SWC와 Port: 제어 로직을 담는 블록
 
 소프트웨어 구성요소(SWC)는 하나의 기능 단위를 담는 블록이다. 예를 들어 "운전자 요구 토크 계산" SWC, "배터리 온도 감시" SWC처럼, 제어 로직의 한 덩어리가 하나의 SWC가 된다. 더 쪼갤 수 없는 최소 단위를 아토믹 SWC(atomic SWC)라 부르며, 이 아토믹 SWC는 반드시 하나의 ECU 위에 통째로 배치된다(여러 ECU에 쪼개 담을 수 없다).
@@ -64,6 +66,8 @@ BSW 서비스 계층에는 수많은 모듈이 있지만, 신호가 어떻게 �
 - EcuM(ECU State Manager): ECU의 시동(startup)과 종료(shutdown), 저전력(sleep) 같은 상태 전환을 총괄한다.
 
 이제 다른 ECU가 보낸 차속 신호가 우리 ECU의 SWC까지 올라오는 길을 따라가 보자. 먼저 CAN 버스에 프레임이 도착하면 MCAL의 CAN 드라이버가 이를 받아 상위로 올린다. 그 위 CanIf(CAN Interface)가 하드웨어 차이를 감추고 PDU 형태로 PduR에게 전달한다. PduR은 이 PDU가 신호 기반 통신 대상임을 보고 COM에게 넘긴다. COM은 PDU 안의 비트들을 풀어 "차속 = 72 km/h" 같은 개별 신호 값으로 분해한다. 마지막으로 RTE가 이 신호 값을 해당 SWC의 R-Port에 연결해 주고, SWC는 `Rte_Read`로 그 값을 읽는다. 송신은 이 과정을 정확히 거꾸로 밟는다. 이렇게 각 층이 한 가지 변환만 책임지도록 쪼개져 있어서, 어느 한 부분이 바뀌어도 나머지에 영향이 적다.
+
+![CAN 드라이버부터 CanIf, PduR, COM, RTE를 거쳐 SWC까지 올라오는 신호 경로](figures/can-signal-path.svg)
 
 ## AUTOSAR OS: OSEK 위에 세운 표준 OS
 

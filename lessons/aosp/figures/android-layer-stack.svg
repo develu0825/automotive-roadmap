@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" role="img" aria-label="안드로이드 소프트웨어 계층 구조">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#8aa0c6"/>
+    </marker>
+  </defs>
+  <text x="360" y="26" fill="#cbd5e1" font-family="sans-serif" font-size="17" font-weight="bold" text-anchor="middle">안드로이드 소프트웨어 계층</text>
+
+  <rect x="160" y="46" width="400" height="50" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="360" y="76" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">애플리케이션 (클러스터 UI, IVI 런처)</text>
+
+  <rect x="160" y="106" width="400" height="50" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="360" y="136" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">프레임워크 (system_server, Java API)</text>
+
+  <rect x="160" y="166" width="400" height="50" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="360" y="196" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">네이티브 라이브러리 / 런타임 (ART, libc)</text>
+
+  <rect x="160" y="226" width="400" height="50" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="360" y="256" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">HAL (카메라 · 센서 · 오디오)</text>
+
+  <rect x="160" y="286" width="400" height="50" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="360" y="316" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">리눅스 커널 (드라이버 · 스케줄러)</text>
+
+  <line x1="130" y1="50" x2="130" y2="330" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 210" role="img" aria-label="systemd 유닛의 After 의존성과 부팅 순서">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#8aa0c6"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="25" fill="#cbd5e1" font-family="sans-serif" font-size="17" font-weight="bold" text-anchor="middle">systemd 유닛 의존성과 부팅 순서</text>
+
+  <rect x="40" y="80" width="180" height="60" rx="10" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="130" y="113" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">network.target</text>
+
+  <rect x="270" y="80" width="200" height="60" rx="10" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="370" y="113" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">can-gateway.service</text>
+
+  <rect x="520" y="80" width="170" height="60" rx="10" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="605" y="113" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">cluster-ui.service</text>
+
+  <line x1="220" y1="110" x2="270" y2="110" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+  <text x="245" y="95" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">After=</text>
+
+  <line x1="470" y1="110" x2="520" y2="110" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+  <text x="495" y="95" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">After=</text>
+  <text x="495" y="128" fill="#f59e0b" font-family="sans-serif" font-size="14" text-anchor="middle">(Requires= 미지정)</text>
+
+  <text x="360" y="170" fill="#f59e0b" font-family="sans-serif" font-size="15" text-anchor="middle">Requires= 가 없으면 상위 서비스가 실패해도 그대로 진행</text>
+  <text x="360" y="192" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">순서만 보장(After=) vs 존재까지 필수(Requires=)</text>
+</svg>

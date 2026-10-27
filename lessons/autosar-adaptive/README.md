@@ -33,6 +33,8 @@ Adaptive Platform의 가장 근본적인 전환은 운영체제에 대한 가정
 
 정리하면 이렇게 대비된다. Classic은 "하나의 바이너리 안에서 정적으로 배치된 Runnable들이 협력하는" 모델이고, Adaptive는 "POSIX OS 위에서 격리된 프로세스들이 서비스로 통신하는" 모델이다. 전자는 작은 자원과 엄격한 결정론에 강하고, 후자는 큰 연산과 유연한 배포에 강하다. 이 구조적 차이가 뒤에서 볼 통신 방식과 생애주기 관리의 차이로 그대로 이어진다.
 
+![Classic의 단일 바이너리 구조와 Adaptive의 격리된 POSIX 프로세스 구조 비교](figures/classic-vs-adaptive-structure.svg)
+
 ## ara::com: 서비스 지향 통신 미들웨어
 
 Adaptive 애플리케이션들이 서로 통신하는 방식은 Classic과 질적으로 다르다. Classic에서는 포트와 신호가 ARXML에 정적으로 매핑되어, "어느 신호가 어느 ECU로 간다"가 빌드 시점에 못 박힌다. Adaptive는 대신 서비스 지향 아키텍처(SOA, Service-Oriented Architecture)를 택한다. 이는 클라우드의 마이크로서비스와 비슷한 발상이다. 어떤 애플리케이션이 "나는 이런 서비스를 제공한다"고 등록하면, 그 서비스가 필요한 다른 애플리케이션이 런타임에 이를 찾아내(서비스 디스커버리, service discovery) 연결한다. 제공자가 어느 ECU에 있는지 소비자는 몰라도 된다.
@@ -65,6 +67,8 @@ proxy.DistanceEvent.Subscribe(10);   // 버퍼 10개로 구독 시작
 ```
 
 여기서 제공자가 어느 ECU에 있는지, 값이 SOME/IP로 어떻게 직렬화되어 전송되는지는 코드에 드러나지 않는다. 소비자는 "장애물 거리가 갱신되면 알려달라"고 선언할 뿐이고, 나머지는 ara::com과 바인딩이 처리한다. 이것이 Classic의 정적 신호 매핑과 가장 크게 대비되는 지점이다.
+
+![소비자의 Proxy와 제공자의 Skeleton이 Method, Event, Field로 통신하는 ara::com 패턴](figures/aracom-proxy-skeleton.svg)
 
 ## Functional Cluster: 플랫폼을 이루는 기능 블록
 

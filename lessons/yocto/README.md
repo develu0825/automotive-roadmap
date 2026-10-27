@@ -42,6 +42,8 @@ Yocto의 빌드 엔진은 BitBake입니다. BitBake는 레시피 파일(.bb)에 
 - do_install — 빌드 결과물을 가상의 설치 경로(D)에 설치
 - do_package — 설치된 파일들을 rpm, deb, ipk 같은 패키지 형식으로 포장
 
+![BitBake는 do_fetch부터 do_package까지 태스크를 의존성 순서대로 실행한다](figures/bitbake-task-flow.svg)
+
 이 흐름은 do_fetch ~ do_install 구간이 특히 레시피 작성자가 가장 많이 손대는 부분입니다. 예를 들어 차량의 CAN 버스 통신을 위한 can-utils 패키지를 레시피로 작성하면 다음과 같은 형태가 됩니다.
 
 ```
@@ -154,6 +156,8 @@ BitBake는 vehicle-image가 요구하는 모든 레시피의 의존성을 분석
 - 이미지 레시피 — 모든 것을 조합해 최종 이미지를 만드는 최상위 레시피
 
 즉 Poky는 "OpenEmbedded-Core(메타데이터) + BitBake(엔진) + 기본 레이어들"의 조합이고, 실제 차량 프로젝트는 여기에 자신의 BSP 레이어와 애플리케이션 레이어를 얹어서 빌드합니다. 애플리케이션 개발자에게는 전체 빌드 환경을 다 설치하게 하는 대신, Yocto가 생성해 주는 eSDK(extensible SDK)를 배포해서 해당 보드용 툴체인과 라이브러리만 간편하게 설치하도록 할 수도 있습니다.
+
+![meta, meta-poky, BSP/벤더 레이어가 모여 이미지 레시피로 조합되고 BitBake가 이를 실행한다](figures/layer-structure.svg)
 
 전체 이미지를 매번 다시 빌드하면서 레시피를 디버깅하는 것은 비효율적입니다. 그래서 Yocto는 특정 레시피만 따로 들여다보고 수정할 수 있는 보조 도구도 함께 제공합니다. 예를 들어 `devtool modify can-utils`를 실행하면 해당 레시피의 소스를 작업 디렉터리로 꺼내 와서 일반적인 Git 저장소처럼 수정하고, 수정이 끝나면 `devtool build`와 `devtool finish`로 다시 레시피에 반영할 수 있습니다. 또한 `bitbake -c cleansstate <레시피>`로 특정 레시피의 캐시만 지우고 다시 빌드하거나, `bitbake -e <레시피>`로 해당 레시피에 실제로 어떤 변수 값이 적용되었는지 전체 환경을 출력해서 확인할 수도 있습니다. 차량 보드처럼 CAN 드라이버 패치 하나가 제대로 적용되었는지 빠르게 확인해야 하는 상황에서는, 전체 이미지를 처음부터 다시 빌드하기 전에 이런 레시피 단위 도구로 먼저 좁혀서 디버깅하는 습관이 큰 시간 절약으로 이어집니다.
 

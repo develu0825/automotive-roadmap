@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 380" role="img" aria-label="부트 단계와 사용 가능 자원의 확장">
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#8aa0c6"/></marker></defs>
+  <text x="360" y="26" fill="#cbd5e1" font-family="sans-serif" font-size="17" font-weight="bold" text-anchor="middle">부트 단계와 사용 가능 자원의 확장</text>
+
+  <rect x="220" y="46" width="280" height="56" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="360" y="68" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">BootROM</text>
+  <text x="360" y="88" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">내부 SRAM만 사용 (수십~수백KB)</text>
+
+  <line x1="360" y1="102" x2="360" y2="132" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+
+  <rect x="220" y="132" width="280" height="56" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="360" y="154" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">SPL</text>
+  <text x="360" y="174" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">DRAM 컨트롤러 초기화</text>
+
+  <line x1="360" y1="188" x2="360" y2="218" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+
+  <rect x="220" y="218" width="280" height="56" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="360" y="240" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">U-Boot 본체</text>
+  <text x="360" y="260" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">DRAM에서 동작, 콘솔·드라이버 제공</text>
+
+  <line x1="360" y1="274" x2="360" y2="304" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+
+  <rect x="220" y="304" width="280" height="56" rx="8" fill="#111a2e" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="360" y="326" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">Linux 커널</text>
+  <text x="360" y="346" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">제어권이 완전히 이전됨</text>
+</svg>

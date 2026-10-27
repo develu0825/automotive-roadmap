@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 170" role="img" aria-label="CAN 버스에서 앱까지의 데이터 흐름">
+  <defs>
+    <marker id="arrow1" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#8aa0c6"/>
+    </marker>
+  </defs>
+  <text x="360" y="30" fill="#cbd5e1" font-family="sans-serif" font-size="17" font-weight="bold" text-anchor="middle">CAN 버스에서 앱까지의 데이터 흐름</text>
+
+  <rect x="15" y="70" width="150" height="70" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="90" y="98" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">CAN 버스</text>
+  <text x="90" y="120" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">raw 신호</text>
+
+  <rect x="195" y="70" width="150" height="70" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="270" y="98" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">VHAL</text>
+  <text x="270" y="120" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">표준화 계층</text>
+
+  <rect x="375" y="70" width="150" height="70" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="450" y="98" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">CarService</text>
+  <text x="450" y="120" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">권한 검사·API</text>
+
+  <rect x="555" y="70" width="150" height="70" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="630" y="98" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">앱</text>
+  <text x="630" y="120" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">Car API 사용</text>
+
+  <line x1="165" y1="105" x2="193" y2="105" stroke="#8aa0c6" stroke-width="2" marker-end="url(#arrow1)"/>
+  <line x1="345" y1="105" x2="373" y2="105" stroke="#8aa0c6" stroke-width="2" marker-end="url(#arrow1)"/>
+  <line x1="525" y1="105" x2="553" y2="105" stroke="#8aa0c6" stroke-width="2" marker-end="url(#arrow1)"/>
+</svg>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" role="img" aria-label="두 프로세스 사이의 IPC 메커니즘별 특성 비교">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#8aa0c6"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="25" fill="#cbd5e1" font-family="sans-serif" font-size="17" font-weight="bold" text-anchor="middle">IPC 메커니즘별 특성 비교</text>
+
+  <rect x="40" y="50" width="140" height="340" rx="10" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="110" y="80" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">프로세스 A</text>
+  <text x="110" y="100" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">(CAN 게이트웨이)</text>
+
+  <rect x="540" y="50" width="140" height="340" rx="10" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="610" y="80" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">프로세스 B</text>
+  <text x="610" y="100" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">(클러스터/내비게이션)</text>
+
+  <line x1="180" y1="90" x2="540" y2="90" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+  <text x="360" y="72" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">pipe / FIFO</text>
+  <text x="360" y="108" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">순차 바이트 스트림</text>
+
+  <line x1="180" y1="160" x2="540" y2="160" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+  <text x="360" y="142" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">공유 메모리</text>
+  <text x="360" y="178" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">최고 속도, 동기화 필요</text>
+
+  <line x1="180" y1="230" x2="540" y2="230" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+  <text x="360" y="212" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">메시지 큐</text>
+  <text x="360" y="248" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">메시지 단위, 순서 보장</text>
+
+  <line x1="180" y1="300" x2="540" y2="300" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+  <text x="360" y="282" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">시그널</text>
+  <text x="360" y="318" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">가벼운 비동기 알림</text>
+
+  <line x1="180" y1="370" x2="540" y2="370" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+  <text x="360" y="352" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">유닉스 도메인 소켓</text>
+  <text x="360" y="388" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">양방향, 다중 클라이언트</text>
+</svg>

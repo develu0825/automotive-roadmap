@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" role="img" aria-label="리셋 벡터 테이블에서 Reset_Handler를 거쳐 main 호출까지의 흐름">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#8aa0c6"/>
+    </marker>
+  </defs>
+  <text x="360" y="24" fill="#cbd5e1" font-family="sans-serif" font-size="17" font-weight="bold" text-anchor="middle">리셋 벡터 테이블에서 main 호출까지</text>
+
+  <text x="170" y="40" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">전원 On / 리셋</text>
+  <line x1="170" y1="44" x2="170" y2="60" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+
+  <rect x="40" y="60" width="260" height="50" rx="6" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="170" y="89" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">[0] 초기 SP 값</text>
+
+  <rect x="40" y="120" width="260" height="50" rx="6" fill="#111a2e" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="170" y="149" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">[1] Reset_Handler 주소</text>
+
+  <rect x="40" y="180" width="260" height="50" rx="6" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="170" y="209" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">[2] NMI_Handler 주소</text>
+
+  <rect x="40" y="240" width="260" height="50" rx="6" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="170" y="269" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">[3] HardFault_Handler 주소</text>
+
+  <line x1="300" y1="145" x2="430" y2="145" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+
+  <rect x="430" y="135" width="240" height="70" rx="6" fill="#111a2e" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="550" y="163" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">Reset_Handler 실행</text>
+  <text x="550" y="185" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">(.data/.bss 초기화)</text>
+
+  <line x1="550" y1="205" x2="550" y2="255" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+
+  <rect x="430" y="255" width="240" height="55" rx="6" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="550" y="287" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">main() 호출</text>
+</svg>

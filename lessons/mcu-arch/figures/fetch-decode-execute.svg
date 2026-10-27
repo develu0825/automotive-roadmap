@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="CPU의 Fetch, Decode, Execute 명령어 실행 사이클">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#8aa0c6"/>
+    </marker>
+  </defs>
+  <text x="360" y="24" fill="#cbd5e1" font-family="sans-serif" font-size="17" font-weight="bold" text-anchor="middle">CPU 명령어 실행 사이클: Fetch - Decode - Execute</text>
+
+  <text x="160" y="62" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">PC 주소에서</text>
+  <line x1="160" y1="66" x2="160" y2="100" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+
+  <rect x="80" y="100" width="160" height="70" rx="6" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="160" y="128" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">Fetch</text>
+  <text x="160" y="150" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">(명령어 가져오기)</text>
+
+  <line x1="240" y1="135" x2="280" y2="135" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+
+  <rect x="280" y="100" width="160" height="70" rx="6" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="360" y="128" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">Decode</text>
+  <text x="360" y="150" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">(명령어 해석)</text>
+
+  <line x1="440" y1="135" x2="480" y2="135" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+
+  <rect x="480" y="100" width="160" height="70" rx="6" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="560" y="128" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">Execute</text>
+  <text x="560" y="150" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">(연산 실행)</text>
+
+  <path d="M640,135 L680,135 L680,220 L40,220 L40,135 L80,135" fill="none" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+  <text x="360" y="250" fill="#38bdf8" font-family="sans-serif" font-size="15" text-anchor="middle">다음 사이클로 (PC 증가 후 반복)</text>
+</svg>

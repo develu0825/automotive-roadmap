@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" role="img" aria-label="메모리 영역: 코드, 정적, 힙, 스택과 스택 오버플로우 위험">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#8aa0c6"/></marker>
+    <marker id="w" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#f59e0b"/></marker>
+  </defs>
+  <text x="360" y="28" fill="#cbd5e1" font-family="sans-serif" font-size="17" font-weight="bold" text-anchor="middle">메모리 영역: 코드·정적·힙·스택</text>
+
+  <rect x="270" y="50" width="180" height="55" rx="10" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="360" y="72" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">코드 (code/text)</text>
+  <text x="360" y="92" fill="#8aa0c6" font-family="sans-serif" font-size="15" text-anchor="middle">읽기 전용, 플래시</text>
+
+  <rect x="270" y="115" width="180" height="55" rx="10" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="360" y="137" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">정적/전역 (data/bss)</text>
+  <text x="360" y="157" fill="#8aa0c6" font-family="sans-serif" font-size="15" text-anchor="middle">전역·static 변수</text>
+
+  <rect x="270" y="180" width="180" height="55" rx="10" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="360" y="202" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">힙 (heap)</text>
+  <text x="360" y="222" fill="#8aa0c6" font-family="sans-serif" font-size="15" text-anchor="middle">malloc, 실행 중 요청</text>
+
+  <line x1="330" y1="235" x2="330" y2="300" stroke="#f59e0b" stroke-width="2" marker-end="url(#w)"/>
+  <line x1="390" y1="300" x2="390" y2="235" stroke="#f59e0b" stroke-width="2" marker-end="url(#w)"/>
+  <text x="550" y="272" fill="#f59e0b" font-family="sans-serif" font-size="15" text-anchor="middle">충돌하면</text>
+  <text x="550" y="292" fill="#f59e0b" font-family="sans-serif" font-size="15" text-anchor="middle">스택 오버플로우</text>
+
+  <rect x="270" y="305" width="180" height="55" rx="10" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="360" y="327" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">스택 (stack)</text>
+  <text x="360" y="347" fill="#8aa0c6" font-family="sans-serif" font-size="15" text-anchor="middle">지역변수, 함수 호출마다</text>
+</svg>

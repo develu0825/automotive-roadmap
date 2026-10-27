@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="유저 공간과 커널 공간의 특권 경계, 그리고 시스템 콜을 통한 요청과 반환 경로">
+  <defs>
+    <marker id="arrow-sys" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#38bdf8"/>
+    </marker>
+    <marker id="arrow-ret" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#8aa0c6"/>
+    </marker>
+  </defs>
+  <text x="360" y="26" fill="#cbd5e1" font-family="sans-serif" font-size="17" font-weight="bold" text-anchor="middle">유저 공간과 커널 공간, 시스템 콜 경로</text>
+
+  <rect x="60" y="50" width="600" height="90" rx="10" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="360" y="72" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">유저 공간 (유저 모드)</text>
+  <rect x="280" y="85" width="160" height="45" rx="6" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="360" y="112" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">애플리케이션</text>
+
+  <line x1="60" y1="165" x2="660" y2="165" stroke="#8aa0c6" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <text x="150" y="152" fill="#cbd5e1" font-family="sans-serif" font-size="14" text-anchor="middle">특권 등급 경계</text>
+
+  <rect x="60" y="190" width="600" height="90" rx="10" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="360" y="212" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">커널 공간 (커널 모드)</text>
+  <rect x="280" y="225" width="160" height="45" rx="6" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="360" y="252" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">시스템 콜 처리</text>
+
+  <line x1="330" y1="130" x2="330" y2="225" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrow-sys)"/>
+  <text x="270" y="180" fill="#38bdf8" font-family="sans-serif" font-size="14" text-anchor="middle">요청</text>
+
+  <line x1="390" y1="225" x2="390" y2="130" stroke="#8aa0c6" stroke-width="2" marker-end="url(#arrow-ret)"/>
+  <text x="450" y="180" fill="#8aa0c6" font-family="sans-serif" font-size="14" text-anchor="middle">반환</text>
+</svg>

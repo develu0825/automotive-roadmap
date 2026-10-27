@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 220" role="img" aria-label="포인터는 주소를 담는 변수, p가 speed를 가리킨다">
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#8aa0c6"/></marker></defs>
+  <text x="360" y="28" fill="#cbd5e1" font-family="sans-serif" font-size="17" font-weight="bold" text-anchor="middle">포인터는 주소를 담는 변수</text>
+
+  <rect x="70" y="65" width="190" height="80" rx="10" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="165" y="95" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">int *p</text>
+  <text x="165" y="120" fill="#8aa0c6" font-family="sans-serif" font-size="15" text-anchor="middle">값: 0x1000</text>
+
+  <rect x="460" y="65" width="190" height="80" rx="10" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="555" y="95" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">int speed</text>
+  <text x="555" y="120" fill="#8aa0c6" font-family="sans-serif" font-size="15" text-anchor="middle">주소 0x1000, 값 60</text>
+
+  <line x1="260" y1="105" x2="460" y2="105" stroke="#b794f6" stroke-width="2" marker-end="url(#a)"/>
+  <text x="360" y="95" fill="#b794f6" font-family="sans-serif" font-size="15" text-anchor="middle">가리킨다</text>
+
+  <text x="360" y="190" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">*p 는 p가 가리키는 자리(speed)의 값을 읽거나 쓴다</text>
+</svg>

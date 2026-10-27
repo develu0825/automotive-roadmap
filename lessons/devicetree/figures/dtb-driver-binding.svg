@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" role="img" aria-label="DTS 컴파일과 드라이버 바인딩 흐름">
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#8aa0c6"/></marker></defs>
+  <text x="360" y="24" fill="#cbd5e1" font-family="sans-serif" font-size="17" font-weight="bold" text-anchor="middle">DTS 컴파일과 드라이버 바인딩 흐름</text>
+
+  <rect x="220" y="44" width="280" height="50" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="360" y="63" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">DTS</text>
+  <text x="360" y="83" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">사람이 작성하는 텍스트 소스</text>
+
+  <line x1="360" y1="94" x2="360" y2="120" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+
+  <rect x="220" y="120" width="280" height="50" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="360" y="139" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">dtc 컴파일</text>
+  <text x="360" y="159" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">DTS → DTB 변환</text>
+
+  <line x1="360" y1="170" x2="360" y2="196" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+
+  <rect x="220" y="196" width="280" height="50" rx="8" fill="#111a2e" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="360" y="215" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">DTB</text>
+  <text x="360" y="235" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">바이너리 트리, 부팅 시 전달</text>
+
+  <line x1="360" y1="246" x2="360" y2="272" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+
+  <rect x="220" y="272" width="280" height="50" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="360" y="291" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">커널 파싱</text>
+  <text x="360" y="311" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">compatible 문자열 비교</text>
+
+  <line x1="360" y1="322" x2="360" y2="348" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+
+  <rect x="220" y="348" width="280" height="50" rx="8" fill="#111a2e" stroke="#b794f6" stroke-width="1.5"/>
+  <text x="360" y="367" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">드라이버 연결</text>
+  <text x="360" y="387" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">probe 함수 호출</text>
+</svg>
