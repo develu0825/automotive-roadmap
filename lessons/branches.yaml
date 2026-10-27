@@ -1,0 +1,132 @@
+# 자동차 개발 로드맵 — 가운데 공통 기초에서 세 트랙(파워트레인·섀시·자율주행)이 뻗어나간다.
+# robotics-roadmap 엔진을 역공학해 자동차 도메인으로 재구성한 커리큘럼 지도.
+
+hub:
+  rings:
+    - branches: [fmath, fee]
+
+trees:
+  - id: autonomy
+    title: "자율주행 & 전장·SW"
+    color: "#b794f6"
+    angle: 180
+    branches: [sw-core, perception, fusion, network, planning, adas, future]
+  - id: powertrain
+    title: "파워트레인 & 전동화"
+    color: "#ff7a45"
+    angle: 300
+    branches: [engine, combustion, driveline, emotor, battery, fuelcell]
+  - id: chassis
+    title: "차량동역학 & 섀시"
+    color: "#35c2f0"
+    angle: 60
+    branches: [tire, suspension, steering, braking, vdyn, nvh]
+
+branches:
+  - id: fmath
+    title: "공학수학 · 물리"
+    summary: "벡터·미적분·동역학·확률. 자동차의 운동·하중·신호를 숫자로 다루는 공통 언어"
+    color: "#d6d3d1"
+
+  - id: fee
+    title: "전기 · 전자 기초"
+    summary: "회로·신호·센서. 전동화와 전장 소프트웨어로 들어가는 입구"
+    color: "#38bdf8"
+
+  - id: sw-core
+    title: "제어 · SW 핵심"
+    summary: "신호처리·제어이론·상태추정·임베디드. 자율주행과 전장이 공통으로 딛는 소프트웨어 뼈대"
+    color: "#cbd5e1"
+    core: true
+
+  - id: perception
+    title: "인지 센서"
+    summary: "카메라·레이더·라이다로 주변을 읽고 객체를 찾아내는 인지 파이프라인"
+    color: "#60a5fa"
+
+  - id: fusion
+    title: "센서 융합 · 측위"
+    summary: "여러 센서를 섞어 차의 위치와 주변 지도를 아는 방법. 퓨전·측위·SLAM"
+    color: "#a78bfa"
+
+  - id: network
+    title: "전장 · 네트워크"
+    summary: "ECU 와 CAN·이더넷. 센서·제어기를 한 차 위에서 잇는 전장 아키텍처"
+    color: "#38bdf8"
+
+  - id: planning
+    title: "판단 · 경로계획"
+    summary: "상황을 판단하고 안전한 경로를 만들며 주변 거동을 예측하는 의사결정"
+    color: "#a3e635"
+
+  - id: adas
+    title: "ADAS · 기능안전"
+    summary: "ACC·LKAS·AEB 같은 운전보조와 ISO 26262·SOTIF 안전 체계"
+    color: "#fb923c"
+
+  - id: future
+    title: "미래 모빌리티"
+    summary: "아직 굳지 않은 최전선. V2X 협력주행, L4+ 완전자율, 소프트웨어 정의 차량(SDV)"
+    color: "#f87171"
+    outer: true
+
+  - id: engine
+    title: "내연기관"
+    summary: "열·유체에서 출발해 4행정 사이클·흡배기·과급까지, 연료를 힘으로 바꾸는 엔진"
+    color: "#fbbf24"
+
+  - id: combustion
+    title: "연소 · 배기"
+    summary: "연소와 노킹, 배기 규제와 후처리(촉매·DPF·SCR)"
+    color: "#f59e0b"
+
+  - id: driveline
+    title: "변속기 · 구동계"
+    summary: "토크·속도를 바퀴로 전하는 변속기와 차동·AWD 구동계"
+    color: "#818cf8"
+
+  - id: emotor
+    title: "전기구동 · 모터"
+    summary: "구동 모터와 인버터, FOC 모터 제어로 전기로 바퀴를 돌리는 길"
+    color: "#2dd4bf"
+
+  - id: battery
+    title: "배터리 · BMS"
+    summary: "셀 화학과 팩, SOC/SOH 를 추정·보호하는 BMS, 충전과 열관리"
+    color: "#4ade80"
+
+  - id: fuelcell
+    title: "수소 · 연료전지"
+    summary: "수소-산소 전기화학으로 전기를 만드는 연료전지와 FCEV 시스템"
+    color: "#22d3ee"
+
+  - id: tire
+    title: "타이어 · 접지"
+    summary: "마찰원·슬립·하중이동으로 코너링·제동력이 생기는 접지의 물리"
+    color: "#f472b6"
+
+  - id: suspension
+    title: "서스펜션 · 현가"
+    summary: "현가 지오메트리와 스프링·댐퍼, 액티브 서스펜션의 승차감-핸들링 균형"
+    color: "#35c2f0"
+
+  - id: steering
+    title: "조향"
+    summary: "조향 기구와 EPS/MDPS, 조향감과 스티어-바이-와이어"
+    color: "#60a5fa"
+
+  - id: braking
+    title: "제동"
+    summary: "유압 제동계와 ABS·EBD, 유압+회생 협조제어"
+    color: "#fb7185"
+
+  - id: vdyn
+    title: "주행 동역학 · 안정성"
+    summary: "요·롤·피치 차량 운동과 핸들링, ESC/VDC 자세제어"
+    color: "#fbbf24"
+
+  - id: nvh
+    title: "NVH · 승차감"
+    summary: "소음·진동의 전달 경로와 방진·차음, 모달·CAE 해석"
+    color: "#a78bfa"
+
