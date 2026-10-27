@@ -1,0 +1,60 @@
+- topic: bitbake-task-flow
+  title: "BitBake 태스크 흐름"
+  section: 정리
+  variants:
+    - question: "BitBake 레시피의 do_fetch ~ do_install 태스크 흐름에 대한 설명으로 옳은 것은?"
+      choices:
+        - "소스를 받아오고 압축을 풀고 패치·설정한 뒤 컴파일해서 가상 설치 경로에 설치하는 순서로 진행된다"
+        - "모든 태스크가 항상 무작위 순서로 동시에 실행된다"
+        - "do_install이 항상 가장 먼저 실행되고 do_fetch는 모든 컴파일 작업이 끝난 뒤 맨 마지막에 가서야 실행된다"
+        - "패키지를 설치한 뒤에야 소스 코드를 다운로드한다"
+      answer: 0
+      explanation: "레시피는 do_fetch, do_unpack, do_patch, do_configure, do_compile, do_install 순서로 태스크를 실행한다."
+    - question: "BitBake가 레시피의 태스크를 실행하는 방식으로 가장 적절한 것은?"
+      choices:
+        - "레시피에 선언된 의존성 그래프에 따라 태스크를 순서대로 실행하는 태스크 스케줄러다"
+        - "레시피 파일의 알파벳 순서대로만 태스크를 실행한다"
+        - "사람이 매 단계마다 직접 승인해야만 다음 태스크로 넘어간다"
+        - "하나의 레시피를 딱 한 번만 실행하고 나면 캐시를 완전히 지우기 전까지는 다시는 실행하지 않는다"
+      answer: 0
+      explanation: "BitBake는 레시피에 적힌 태스크들을 의존성 그래프에 따라 순서대로 실행하는 태스크 스케줄러다."
+- topic: layer-bbappend
+  title: "레이어와 bbappend"
+  section: 정리
+  variants:
+    - question: "레이어(layer)와 .bbappend 파일을 쓰는 이유로 가장 적절한 것은?"
+      choices:
+        - "원본 레시피를 건드리지 않고도 보드별·벤더별 차이를 별도 레이어에서 비침투적으로 확장할 수 있기 때문이다"
+        - "컴파일 속도를 두 배로 높이기 위해서다"
+        - "전 세계 모든 보드의 레시피와 설정 파일을 전부 하나의 거대하고 구분 없는 파일로 강제로 합치기 위해서다"
+        - "라이선스 검사를 완전히 생략하기 위해서다"
+      answer: 0
+      explanation: ".bbappend는 원본 레시피를 수정하지 않고도 보드나 벤더별 차이를 별도 레이어에서 비침투적으로 덧붙일 수 있게 해준다."
+    - question: "기존 커널 레시피를 직접 수정하지 않고 CAN 드라이버 패치를 추가하는 올바른 방법으로 옳은 것은?"
+      choices:
+        - "자신의 BSP 레이어 안에 같은 이름의 .bbappend 파일을 만들어 SRC_URI에 패치를 추가한다"
+        - "core 레이어 안의 원본 커널 레시피 파일을 직접 찾아 열어서 내용을 전부 지우고 처음부터 다시 쓴다"
+        - "local.conf 파일 안에 패치 코드를 전부 복사해 붙여넣는다"
+        - "커널 전체를 처음부터 손으로 새로 작성한다"
+      answer: 0
+      explanation: "같은 이름의 .bbappend 파일을 BSP 레이어에 만들어 SRC_URI에 패치를 추가하면 원본 레시피를 그대로 유지하며 확장할 수 있다."
+- topic: image-recipe-config
+  title: "이미지 레시피와 설정 파일"
+  section: 정리
+  variants:
+    - question: "local.conf, layer.conf, machine 설정 파일의 역할 구분으로 옳은 것은?"
+      choices:
+        - "local.conf는 빌드 환경을, layer.conf는 레이어 정체성을, machine 설정은 타겟 보드 정보를 담당한다"
+        - "셋 다 서로 완전히 똑같은 내용을 중복해서 담고 있어서 어느 것 하나만 있어도 항상 충분히 빌드가 가능하다"
+        - "local.conf는 커널 소스 코드 전체를 담고 있다"
+        - "machine 설정은 라이선스 매니페스트만을 담당한다"
+      answer: 0
+      explanation: "local.conf는 빌드 전체 환경, layer.conf는 레이어 자신의 정체성, machine 설정은 타겟 보드 정보를 각각 담당한다."
+    - question: "이미지 레시피(image recipe)가 하는 역할로 가장 적절한 것은?"
+      choices:
+        - "여러 레시피와 패키지를 조합해 최종 루트파일시스템과 부팅 이미지를 만들어낸다"
+        - "하나의 소스 파일만을 받아서 컴파일한 뒤에 오브젝트 파일 하나만을 결과물로 만들어낸다"
+        - "라이선스 매니페스트 파일만을 삭제한다"
+        - "DTC 컴파일러의 버전을 변경한다"
+      answer: 0
+      explanation: "이미지 레시피는 IMAGE_INSTALL로 지정된 여러 패키지를 조합해 최종 루트파일시스템과 부팅 이미지를 만들어낸다."

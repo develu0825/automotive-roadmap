@@ -1,0 +1,38 @@
+- topic: vehicle-property
+  title: "VehicleProperty 모델"
+  section: 정리
+  variants:
+    - question: "HVAC_TEMPERATURE_SET 프로퍼티가 운전석과 조수석에서 서로 다른 값을 가질 수 있는 이유로 가장 적절한 것은 무엇인가?"
+      choices: ["프로퍼티 ID가 좌석마다 다르기 때문이다", "같은 프로퍼티 ID라도 area가 다르면 별개의 값으로 취급되기 때문이다", "VHAL이 좌석마다 별도의 get/set/subscribe 인터페이스를 새로 정의하기 때문이다", "CarService가 좌석별로 완전히 다른 AIDL 서비스를 각각 새로 생성해서 관리하기 때문이다"]
+      answer: 1
+      explanation: "VHAL은 프로퍼티를 프로퍼티 ID와 area의 조합으로 식별하므로, 같은 ID라도 area가 다르면 별개의 값으로 저장되고 조회된다."
+    - question: "PERF_VEHICLE_SPEED 프로퍼티가 읽기 전용으로 정의되는 이유로 가장 적절한 것은 무엇인가?"
+      choices: ["값이 자주 바뀌지 않기 때문이다", "센서가 측정하는 값이라 프레임워크가 임의로 바꿀 수 없기 때문이다", "area가 존재하지 않는 유일한 프로퍼티이기 때문이다", "VHAL 구현체가 벤더마다 달라서 읽기 전용으로 통일하지 않으면 빌드 자체가 실패하기 때문이다"]
+      answer: 1
+      explanation: "속도는 센서가 측정해 올리는 값이므로 프레임워크가 임의로 바꿀 수 없어 읽기 전용으로 정의된다."
+
+- topic: get-set-subscribe
+  title: "get·set·subscribe 패턴"
+  section: 정리
+  variants:
+    - question: "속도처럼 계속 바뀌는 값을 다룰 때 폴링 대신 subscribe를 쓰는 것이 유리한 이유로 가장 적절한 것은 무엇인가?"
+      choices: ["subscribe는 항상 더 적은 메모리를 쓴다", "값이 실제로 바뀌는 순간에만 콜백이 호출되어 자원 낭비와 지연을 줄인다", "subscribe는 VHAL 구현체 없이도 값을 바로 읽어 올 수 있다", "폴링은 CAN 버스를 완전히 차단시켜서 다른 ECU의 통신을 불가능하게 만든다"]
+      answer: 1
+      explanation: "폴링은 주기적으로 get()을 호출해 CPU를 낭비하고 지연이 생기지만, subscribe는 값이 바뀌는 순간에만 콜백으로 전달해 효율적이다."
+    - question: "운전자가 IVI에서 공조 온도를 바꾸는 상황에 적합한 VHAL 호출로 가장 적절한 것은 무엇인가?"
+      choices: ["subscribe만 호출한다", "HVAC_TEMPERATURE_SET 프로퍼티에 원하는 온도 값으로 set을 호출한다", "PERF_VEHICLE_SPEED 프로퍼티를 get으로 반복 조회한다", "VHAL을 거치지 않고 CarService가 CAN 프레임을 직접 인코딩해 ECU로 전송한다"]
+      answer: 1
+      explanation: "사용자가 명령을 내리는 쓰기 가능한 프로퍼티는 set 호출로 값을 바꾸는 것이 자연스러운 패턴이다."
+
+- topic: vhal-implementation
+  title: "VHAL 구현과 Treble 경계"
+  section: 정리
+  variants:
+    - question: "VHAL이 Treble 아키텍처에 따라 벤더 측 별도 프로세스로 구동되는 이유로 가장 적절한 것은 무엇인가?"
+      choices: ["속도를 더 빠르게 만들기 위해서다", "프레임워크가 업데이트되어도 벤더가 작성한 구현에 직접 영향을 주지 않도록 분리하기 때문이다", "VHAL은 항상 system_server 프로세스 안에서만 실행되어야 하기 때문이다", "벤더 프로세스로 분리하면 CAN 버스 자체가 필요 없어져서 하드웨어 비용이 줄어들기 때문이다"]
+      answer: 1
+      explanation: "Treble의 핵심은 벤더 구현을 시스템 프로세스와 분리해 프레임워크 업데이트가 벤더 코드에 직접 영향을 주지 않도록 하는 것이다."
+    - question: "에뮬레이터에서 쓰이는 레퍼런스 VHAL의 특징으로 가장 적절한 것은 무엇인가?"
+      choices: ["실차와 동일한 CAN 하드웨어를 그대로 쓴다", "소켓 기반 통신으로 가상의 차량 신호를 흉내 내어 프레임워크에 전달한다", "프레임워크에 보이는 인터페이스가 실차 VHAL과 완전히 달라서 앱 코드를 다시 짜야 한다", "레퍼런스 VHAL은 get과 set만 지원하고 subscribe 기능은 전혀 제공하지 않는다"]
+      answer: 1
+      explanation: "레퍼런스 VHAL은 실제 CAN 버스 대신 소켓 기반 통신으로 가상의 차량 신호를 흉내 내며, 프레임워크에 보이는 인터페이스는 실차 VHAL과 동일하다."

@@ -1,0 +1,38 @@
+- topic: aaos-vs-android-auto
+  title: "AAOS와 Android Auto 구분"
+  section: 정리
+  variants:
+    - question: "AAOS와 Android Auto의 근본적인 차이로 가장 적절한 것은 무엇인가?"
+      choices: ["둘 다 완전히 같은 기술이다", "Android Auto는 폰 화면을 투사하고, AAOS는 안드로이드 자체가 차량에서 직접 구동된다", "AAOS는 폰이 있어야만 동작하고 Android Auto는 폰 없이도 동작한다", "Android Auto는 차량 SoC에서 직접 부팅되고 AAOS는 폰에서 실행되어 화면만 투사하는 방식이다"]
+      answer: 1
+      explanation: "Android Auto는 폰에서 연산이 일어나 화면을 투사하는 방식이고, AAOS는 안드로이드 자체가 차량 헤드유닛에서 직접 구동된다."
+    - question: "폰을 차량에 연결해서 지도 앱 화면이 떴다가 폰을 분리하자 화면이 사라졌다면 이 상황을 설명하는 것으로 가장 적절한 것은 무엇인가?"
+      choices: ["AAOS가 정상 동작한 것이다", "연산이 폰에서 일어나고 화면만 투사되는 Android Auto를 경험한 것이다", "차량 헤드유닛의 AAOS가 고장나서 화면이 사라진 것이다", "AAOS와 Android Auto가 동시에 실행되다가 occupant zone 설정 오류로 화면이 꺼진 것이다"]
+      answer: 1
+      explanation: "폰을 분리하면 화면이 사라지는 것은 연산이 폰에서 일어나는 Android Auto의 특징이며, AAOS라면 폰 없이도 계속 동작한다."
+
+- topic: multi-display-user
+  title: "멀티 디스플레이와 멀티 유저"
+  section: 정리
+  variants:
+    - question: "AAOS에서 클러스터 디스플레이가 IVI 디스플레이보다 서드파티 앱에 훨씬 제한적인 이유로 가장 적절한 것은 무엇인가?"
+      choices: ["클러스터 화면의 해상도가 낮기 때문이다", "운전자가 짧고 빈번하게 시선을 주는 화면이라 주의분산을 막아야 하기 때문이다", "클러스터는 뒷좌석 승객 전용 화면이라 운전자가 볼 수 없기 때문이다", "클러스터는 occupant zone 개념이 적용되지 않는 유일한 디스플레이라서 권한 검사를 하지 않기 때문이다"]
+      answer: 1
+      explanation: "클러스터는 운전자가 운전 중 가장 짧고 빈번하게 시선을 주는 화면이므로, 예측 불가능한 UI로 인한 주의분산을 막기 위해 엄격히 제한된다."
+    - question: "AAOS의 게스트 모드가 제공하는 기능으로 가장 적절한 것은 무엇인가?"
+      choices: ["모든 개인 정보에 무제한 접근한다", "개인 정보에 접근하지 못하는 제한된 임시 세션으로 차를 쓰게 한다", "운전자의 즐겨 찾는 라디오 채널을 영구적으로 삭제한다", "클러스터와 IVI 디스플레이를 하나의 화면으로 강제로 통합시켜 보여 준다"]
+      answer: 1
+      explanation: "게스트 모드는 차를 다른 사람에게 잠깐 맡길 때, 개인 정보에 접근하지 못하는 제한된 임시 세션을 제공한다."
+
+- topic: oem-customization
+  title: "OEM 커스터마이징과 권한"
+  section: 정리
+  variants:
+    - question: "AAOS에서 제조사마다 화면 디자인이 전혀 다르게 보일 수 있는 이유로 가장 적절한 것은 무엇인가?"
+      choices: ["AAOS 버전이 제조사마다 다르기 때문이다", "CarLauncher와 SystemUI 같은 구성요소를 OEM이 교체할 수 있도록 설계되었기 때문이다", "GAS 포함 여부에 따라 커널 구조 자체가 달라지기 때문이다", "occupant zone 설정이 제조사마다 다른 프로그래밍 언어로 작성되어야 하기 때문이다"]
+      answer: 1
+      explanation: "AAOS는 핵심 프레임워크는 공통이지만 CarLauncher, SystemUI 같은 구성요소를 OEM이 자사 디자인에 맞게 교체하도록 설계되었다."
+    - question: "앱이 차량 속도 신호에 접근하려 할 때 필요한 것으로 옳은 것은 무엇인가?"
+      choices: ["아무 권한도 필요 없다", "일반 앱 권한과는 별도로 선언하는 차량 전용 car permission이 필요하다", "GAS 빌드에서만 사용 가능하고 AOSP-only 빌드에서는 영원히 막힌다", "CarLauncher를 직접 수정해서 런처 코드 안에 속도 값을 하드코딩해야만 접근할 수 있다"]
+      answer: 1
+      explanation: "차량 신호에 접근하려는 앱은 일반 앱 권한과는 별도로 android.car.permission 형태의 차량 전용 권한을 선언해야 한다."

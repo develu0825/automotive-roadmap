@@ -1,0 +1,38 @@
+- topic: posix-process-model
+  title: "POSIX 기반 프로세스 구조"
+  section: 정리
+  variants:
+    - question: "AUTOSAR Adaptive에서 각 애플리케이션이 독립된 프로세스로 실행되는 것이 Classic과 비교해 유리한 점으로 가장 적절한 것은 무엇인가?"
+      choices: ["빌드 시간이 사라진다", "메모리 격리로 한 애플리케이션의 오류가 다른 애플리케이션에 번지지 않고 개별 교체도 가능하다", "모든 애플리케이션이 하나의 정적 바이너리로 합쳐져서 재사용성이 높아진다", "프로세스 단위 실행은 OSEK PCP를 그대로 적용해 우선순위 역전을 완전히 없애 준다"]
+      answer: 1
+      explanation: "POSIX OS가 보장하는 프로세스별 메모리 격리 덕분에 한 애플리케이션의 오류가 다른 애플리케이션에 번지지 않고, 개별 단위로 교체도 가능하다."
+    - question: "AUTOSAR Classic과 Adaptive의 실행 환경 전제 차이로 가장 적절한 것은 무엇인가?"
+      choices: ["둘 다 동일한 OSEK OS를 전제로 한다", "Classic은 OSEK 계열의 정적 RTOS, Adaptive는 POSIX 준수 OS를 전제로 한다", "Classic은 POSIX OS, Adaptive는 OSEK 계열 RTOS를 전제로 한다", "Classic과 Adaptive 모두 OS 자체를 전제하지 않고 하드웨어 레지스터를 직접 제어하는 방식만 쓴다"]
+      answer: 1
+      explanation: "Classic의 AUTOSAR OS는 OSEK 계보의 정적 실시간 OS이고, Adaptive는 임베디드 Linux나 QNX 같은 POSIX 준수 OS를 전제로 한다."
+
+- topic: aracom-soa
+  title: "ara::com 서비스 지향 통신"
+  section: 정리
+  variants:
+    - question: "ara::com에서 주변 장애물 거리처럼 계속 갱신되는 데이터를 구독자에게 흘려보낼 때 적합한 통신 패턴으로 옳은 것은 무엇인가?"
+      choices: ["Method", "Event, 발행-구독 방식으로 값이 바뀔 때마다 구독자에게 전달된다", "Field의 Setter만 사용해서 값을 강제로 덮어쓰는 방식이다", "Classic의 Sender-Receiver 인터페이스를 그대로 가져와 ARXML에 정적으로 매핑하는 방식이다"]
+      answer: 1
+      explanation: "요청 없이 데이터가 흘러들어오는 스트리밍형 통신에는 발행-구독 방식인 Event 패턴이 적합하다."
+    - question: "Classic의 CAN 신호 방식과 비교해 ara::com Event 방식이 자율주행 소프트웨어에 유리한 이유로 가장 적절한 것은 무엇인가?"
+      choices: ["항상 전송 속도가 더 빠르기 때문이다", "서비스 디스커버리로 제공자 위치를 몰라도 되고 새 소비자를 쉽게 추가할 수 있기 때문이다", "빌드 시점에 신호와 ECU를 더 엄격하게 고정할 수 있기 때문이다", "Event 방식은 CAN 버스와 SOME/IP를 동시에 사용하지 않고 완전히 새로운 전용 하드웨어만 써야 하기 때문이다"]
+      answer: 1
+      explanation: "서비스 디스커버리를 통한 느슨한 결합 덕분에 제공자 위치를 몰라도 되고, 새 소비자가 기존 코드를 바꾸지 않고도 같은 Event를 구독할 수 있다."
+
+- topic: classic-adaptive-tradeoff
+  title: "Classic과 Adaptive의 역할 분담"
+  section: 정리
+  variants:
+    - question: "조향이나 제동처럼 수 밀리초 데드라인과 높은 ASIL이 요구되는 기능에 Classic이 Adaptive보다 적합한 이유로 가장 적절한 것은 무엇인가?"
+      choices: ["Classic이 더 최신 기술이기 때문이다", "동적 할당 같은 예측 불가능한 요소가 없어 최악 실행 시간을 엄격히 보장할 수 있기 때문이다", "Classic은 OTA 업데이트가 더 자주 가능해서 항상 최신 로직을 유지하기 때문이다", "Adaptive는 POSIX OS 자체가 하드 리얼타임을 전혀 지원하지 않도록 설계가 금지되어 있기 때문이다"]
+      answer: 1
+      explanation: "Classic은 동적 할당 같은 예측 불가능한 요소가 없어 최악 실행 시간을 엄격히 보장할 수 있어 하드 리얼타임과 고안전 등급 기능에 적합하다."
+    - question: "Adaptive ECU가 계산한 센서 퓨전 결과를 Classic ECU의 제동 제어기가 받아 쓰는 구조가 보여 주는 것으로 가장 적절한 것은 무엇인가?"
+      choices: ["Adaptive가 Classic을 완전히 대체했다", "유연한 연산은 Adaptive가, 결정론적 안전 제어는 Classic이 맡아 상호 보완한다", "Classic ECU는 더 이상 CAN이나 센서를 전혀 쓰지 않게 되었다", "두 플랫폼은 서로 통신할 수 없어서 완성차에서는 둘 중 하나만 선택해 써야 한다"]
+      answer: 1
+      explanation: "생각하고 계획하는 유연한 영역은 Adaptive가, 즉시 안전하게 작동하는 결정론적 영역은 Classic이 맡아 차량 이더넷으로 연결되어 상호 보완한다."

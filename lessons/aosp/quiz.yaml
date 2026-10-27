@@ -1,0 +1,38 @@
+- topic: layer-structure
+  title: "안드로이드 계층 구조"
+  section: 정리
+  variants:
+    - question: "안드로이드 소프트웨어 스택에서 HAL(Hardware Abstraction Layer)의 역할로 가장 적절한 것은 무엇인가?"
+      choices: ["앱 화면을 직접 그린다", "커널 위에서 하드웨어 기능을 표준화된 인터페이스로 상위 계층에 노출한다", "자바로 작성된 시스템 서비스들을 system_server 안에서 실행한다", "커널을 대신해서 프로세스 스케줄링과 메모리 관리를 전부 직접 수행하는 역할을 맡는다"]
+      answer: 1
+      explanation: "HAL은 커널과 프레임워크 사이에서 카메라, 센서, 디스플레이 같은 장치별 기능을 표준 인터페이스로 상위에 노출한다."
+    - question: "Treble 아키텍처가 system 파티션과 vendor 파티션을 분리한 이유와 그 호환성을 보장하는 개념으로 옳은 것은 무엇인가?"
+      choices: ["빌드 속도를 높이기 위해서다", "프레임워크 업그레이드가 벤더 코드에 영향 없도록 분리하고, VINTF로 호환성을 검증한다", "두 파티션을 하나로 합쳐서 관리 비용을 줄이기 위해 분리했다", "vendor 파티션은 구글이 전적으로 관리하고 system 파티션은 OEM이 자유롭게 바꿀 수 있도록 역할을 뒤바꾼 것이다"]
+      answer: 1
+      explanation: "Treble은 프레임워크와 벤더 구현을 분리해 독립적으로 교체할 수 있게 했고, VINTF가 두 쪽의 인터페이스 버전 호환성을 검증한다."
+
+- topic: build-system
+  title: "소스 수신과 빌드"
+  section: 정리
+  variants:
+    - question: "AOSP 소스를 받을 때 repo와 manifest가 하는 역할로 가장 적절한 것은 무엇인가?"
+      choices: ["단일 Git 저장소를 압축해서 내려받는다", "manifest에 정의된 수십 개의 독립 저장소를 한 번에 동기화해 소스 트리를 구성한다", "Android.bp 파일을 자동으로 작성해서 빌드 규칙을 생성한다", "lunch 명령이 선택한 제품 설정에 따라 커널 이미지를 직접 컴파일하고 플래싱까지 수행한다"]
+      answer: 1
+      explanation: "AOSP는 수십 개의 독립된 Git 저장소로 나뉘어 있어, repo가 manifest를 기준으로 이들을 한 번에 동기화한다."
+    - question: "`lunch aosp_arm64-userdebug` 다음에 `m`을 실행하기 전 `repo sync`가 먼저 필요한 이유는 무엇인가?"
+      choices: ["m 명령 자체가 존재하지 않기 때문이다", "소스가 여러 저장소로 나뉘어 있어 sync로 전체를 받아야 빌드할 대상이 갖춰진다", "repo sync는 빌드 타입을 user에서 userdebug로 바꿔 주기 때문이다", "repo sync를 실행해야 Soong 빌드 시스템이 Android.mk 파일을 Android.bp로 전부 변환해 주기 때문이다"]
+      answer: 1
+      explanation: "repo sync가 끝나야 소스 트리 전체가 로컬에 준비되어, lunch로 고른 타겟을 m으로 실제 빌드할 수 있다."
+
+- topic: boot-process
+  title: "부팅 과정"
+  section: 정리
+  variants:
+    - question: "안드로이드 부팅 과정에서 Zygote의 역할로 가장 적절한 것은 무엇인가?"
+      choices: ["커널 드라이버를 로드한다", "공통 초기화를 미리 마친 뒤 fork()로 복제되어 새 앱 프로세스를 빠르게 만든다", "런처 앱을 대신해서 사용자에게 보이는 첫 화면을 직접 그려 준다", "부트로더 다음 순서로 실행되어 커널 이미지를 메모리에 올리고 실행을 커널에 넘긴다"]
+      answer: 1
+      explanation: "Zygote는 ART와 공통 프레임워크 클래스를 미리 로드해 둔 뒤 fork()로 복제되어 앱 프로세스를 빠르게 생성한다."
+    - question: "init.rc 서비스 선언에서 `oneshot`이 의미하는 것으로 옳은 것은 무엇인가?"
+      choices: ["서비스가 영원히 재시작된다", "서비스가 한 번 실행되고 나면 자동으로 재시작되지 않는다", "서비스가 class core에 속한 다른 서비스보다 먼저 실행된다", "서비스가 vendor 쪽 rc 파일이 아니라 반드시 코어 init.rc 안에서만 선언될 수 있다"]
+      answer: 1
+      explanation: "oneshot으로 선언된 서비스는 한 번 실행을 마치면 init이 자동으로 재시작하지 않는다."

@@ -1,0 +1,38 @@
+- topic: carservice-role
+  title: "CarService의 역할"
+  section: 정리
+  variants:
+    - question: "CarService가 통역사이자 문지기 역할을 한다고 설명할 때 그 의미로 가장 적절한 것은 무엇인가?"
+      choices: ["앱 코드를 자동으로 작성해 준다", "VHAL의 언어를 Car API로 바꿔 주고 동시에 접근 권한을 검사한다", "VHAL과 통신하지 않고 앱의 요청을 전부 그대로 CAN 버스에 전달한다", "모든 앱에게 아무 제한 없이 차량의 모든 프로퍼티에 접근할 수 있는 권한을 자동으로 부여한다"]
+      answer: 1
+      explanation: "CarService는 VHAL의 저수준 데이터를 쉬운 Car API로 바꿔 주면서, 동시에 요청 앱의 권한을 검사하는 문지기 역할도 한다."
+    - question: "내비게이션 앱이 VHAL의 get()/set()을 직접 호출하지 않고 CarPropertyManager를 쓰는 이유로 가장 적절한 것은 무엇인가?"
+      choices: ["VHAL이 존재하지 않기 때문이다", "저수준 구조를 감춘 쉬운 API를 제공받고 권한 검사를 중앙에서 받을 수 있기 때문이다", "VHAL을 직접 호출하면 항상 더 빠른 응답을 받을 수 있기 때문이다", "CarPropertyManager는 AIDL이나 바인더를 전혀 사용하지 않는 완전히 별개의 통신 방식이기 때문이다"]
+      answer: 1
+      explanation: "CarPropertyManager는 VHAL의 저수준 데이터 구조를 감춘 쉬운 자바 API를 제공하고, CarService가 권한 검사를 중앙에서 수행한다."
+
+- topic: car-permission
+  title: "차량 권한 모델"
+  section: 정리
+  variants:
+    - question: "차량 프로퍼티에 읽기 권한과 쓰기 권한을 따로 분리해 정의하는 이유로 가장 적절한 것은 무엇인가?"
+      choices: ["권한 종류를 늘려 코드를 복잡하게 만들기 위해서다", "값을 읽는 것과 제어를 바꾸는 것이 안전에 미치는 영향이 다르기 때문이다", "쓰기 권한은 모든 앱에게 기본으로 자동 부여되기 때문이다", "읽기 권한과 쓰기 권한을 분리하면 AndroidManifest.xml 에 권한을 선언하는 절차 자체가 완전히 사라지기 때문이라고 흔히들 오해한다"]
+      answer: 1
+      explanation: "속도를 읽는 것과 공조를 제어하는 것은 안전에 미치는 영향이 다르므로 최소 권한 원칙에 따라 읽기와 쓰기 권한을 분리한다."
+    - question: "앱이 필요한 car permission을 선언하지 않고 CarPropertyManager로 속성에 접근하려 하면 일어나는 일로 가장 적절한 것은 무엇인가?"
+      choices: ["값이 무작위로 반환된다", "CarService의 권한 검사에 걸려 요청이 거부되거나 SecurityException이 발생한다", "VHAL이 자동으로 해당 앱에 임시 권한을 부여해 준다", "AIDL 인터페이스가 런타임에 자동으로 재생성되어 권한 검사를 완전히 건너뛰고 값을 그대로 돌려주게 된다고 오해한다"]
+      answer: 1
+      explanation: "CarService는 요청마다 호출자의 car permission을 검사하며, 권한이 없으면 요청이 거부되거나 SecurityException이 발생한다."
+
+- topic: aidl-binder
+  title: "AIDL과 바인더"
+  section: 정리
+  variants:
+    - question: "`.aidl` 파일을 컴파일하면 생성되는 Proxy와 Stub의 역할로 가장 적절한 것은 무엇인가?"
+      choices: ["둘 다 서버 프로세스에서만 쓰인다", "Proxy는 클라이언트에서 원격 호출을 대리하고 Stub은 서버에서 실제 메서드를 실행한다", "Proxy는 데이터를 저장하고 Stub은 네트워크 속도를 측정한다", "Proxy와 Stub은 바인더를 전혀 거치지 않고 공유 메모리로 직접 데이터를 주고받는 코드다"]
+      answer: 1
+      explanation: "Proxy는 클라이언트 쪽에서 원격 객체를 로컬 객체처럼 호출하게 해 주고, Stub은 서버 쪽에서 그 호출을 받아 실제 메서드를 실행한다."
+    - question: "속도 값이 바뀔 때마다 리스너에게 통지하는 콜백 인터페이스를 `oneway`로 선언하는 이유로 가장 적절한 것은 무엇인가?"
+      choices: ["코드를 더 짧게 쓰기 위해서다", "호출한 쪽이 응답을 기다리지 않아 빈번한 이벤트 통지로 시스템이 느려지지 않게 한다", "oneway로 선언하면 권한 검사를 완전히 건너뛸 수 있기 때문이다", "oneway 선언은 Parcel 직렬화를 생략시켜서 데이터가 전혀 전달되지 않도록 막아 준다"]
+      answer: 1
+      explanation: "oneway로 선언된 비동기 호출은 호출한 쪽이 결과를 기다리지 않아, 자주 바뀌는 값을 통지할 때 시스템 전체가 느려지는 것을 막는다."
