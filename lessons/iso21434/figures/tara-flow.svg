@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 150" role="img" aria-label="TARA 분석 단계: 자산에서 위험 결정까지">
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#8aa0c6"/></marker></defs>
+  <text x="360" y="22" fill="#cbd5e1" font-family="sans-serif" font-size="17" font-weight="bold" text-anchor="middle">TARA: 자산에서 위험 결정까지</text>
+
+  <rect x="10" y="50" width="130" height="60" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="75" y="85" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">자산</text>
+
+  <rect x="152" y="50" width="130" height="60" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="217" y="85" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">피해 시나리오</text>
+
+  <rect x="294" y="50" width="130" height="60" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="359" y="85" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">위협 시나리오</text>
+
+  <rect x="436" y="50" width="130" height="60" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="501" y="85" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">공격 경로</text>
+
+  <rect x="578" y="50" width="130" height="60" rx="8" fill="#111a2e" stroke="#b794f6" stroke-width="1.5"/>
+  <text x="643" y="78" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">위험 결정</text>
+  <text x="643" y="96" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">(가능성×영향)</text>
+
+  <line x1="140" y1="80" x2="152" y2="80" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="282" y1="80" x2="294" y2="80" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="424" y1="80" x2="436" y2="80" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="566" y1="80" x2="578" y2="80" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+</svg>

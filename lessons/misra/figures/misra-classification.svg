@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" role="img" aria-label="MISRA C 요구사항의 분류: 지침과 규칙, 그리고 준수 강도">
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#8aa0c6"/></marker></defs>
+  <text x="360" y="30" fill="#cbd5e1" font-family="sans-serif" font-size="17" font-weight="bold" text-anchor="middle">MISRA C 요구사항의 분류</text>
+
+  <rect x="260" y="50" width="200" height="50" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="360" y="80" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">MISRA C 요구사항</text>
+
+  <rect x="80" y="150" width="240" height="60" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="200" y="175" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">지침 (Directive)</text>
+  <text x="200" y="195" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">설계 맥락을 함께 고려</text>
+
+  <rect x="400" y="150" width="240" height="60" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="520" y="175" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">규칙 (Rule)</text>
+  <text x="520" y="195" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">코드 패턴으로 기계적 판별</text>
+
+  <rect x="150" y="250" width="420" height="54" rx="8" fill="#111a2e" stroke="#b794f6" stroke-width="1.5"/>
+  <text x="360" y="273" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">준수 강도: Mandatory · Required · Advisory</text>
+  <text x="360" y="293" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">(일탈 불가 → 근거 있으면 일탈 가능 → 유연 적용)</text>
+
+  <line x1="310" y1="100" x2="220" y2="150" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="410" y1="100" x2="500" y2="150" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="220" y1="210" x2="300" y2="250" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="500" y1="210" x2="420" y2="250" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+</svg>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-label="키 유도 함수로 마스터 키에서 차량별 고유 키를 생성하는 과정">
+  <defs><marker id="f" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#8aa0c6"/></marker></defs>
+  <text x="360" y="22" fill="#cbd5e1" font-family="sans-serif" font-size="17" font-weight="bold" text-anchor="middle">키 유도: 마스터 키에서 차량별 고유 키로</text>
+
+  <rect x="20" y="50" width="170" height="50" rx="8" fill="#111a2e" stroke="#b794f6" stroke-width="1.5"/>
+  <text x="105" y="80" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">마스터 키 (HSM)</text>
+
+  <rect x="20" y="170" width="170" height="50" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="105" y="200" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">칩 시리얼 번호</text>
+
+  <rect x="260" y="90" width="150" height="70" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="335" y="120" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">KDF</text>
+  <text x="335" y="140" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">(키 유도 함수)</text>
+
+  <rect x="480" y="40" width="210" height="50" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="585" y="70" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">차량 A 고유 키</text>
+
+  <rect x="480" y="115" width="210" height="50" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="585" y="145" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">차량 B 고유 키</text>
+
+  <rect x="480" y="190" width="210" height="50" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="585" y="220" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">차량 C 고유 키</text>
+
+  <line x1="190" y1="80" x2="260" y2="115" stroke="#8aa0c6" stroke-width="2" marker-end="url(#f)"/>
+  <line x1="190" y1="190" x2="260" y2="140" stroke="#8aa0c6" stroke-width="2" marker-end="url(#f)"/>
+
+  <line x1="410" y1="115" x2="480" y2="65" stroke="#8aa0c6" stroke-width="2" marker-end="url(#f)"/>
+  <line x1="410" y1="130" x2="480" y2="140" stroke="#8aa0c6" stroke-width="2" marker-end="url(#f)"/>
+  <line x1="410" y1="145" x2="480" y2="215" stroke="#8aa0c6" stroke-width="2" marker-end="url(#f)"/>
+
+  <text x="360" y="260" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">시리얼마다 다른 고유 키가 계산되어, 한 대의 유출이 전체로 번지지 않는다</text>
+</svg>

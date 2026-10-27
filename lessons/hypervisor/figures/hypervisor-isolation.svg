@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" role="img" aria-label="Type-1 하이퍼바이저 기반 혼합 중요도 격리 구조">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#8aa0c6"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="30" fill="#cbd5e1" font-family="sans-serif" font-size="17" font-weight="bold" text-anchor="middle">Type-1 하이퍼바이저 기반 혼합 중요도 격리</text>
+
+  <rect x="100" y="60" width="220" height="90" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="210" y="90" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">안드로이드 VM (QM)</text>
+  <text x="210" y="115" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">인포테인먼트</text>
+
+  <rect x="400" y="60" width="220" height="90" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="510" y="90" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">AUTOSAR VM (ASIL)</text>
+  <text x="510" y="115" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">제어 영역</text>
+
+  <line x1="360" y1="60" x2="360" y2="150" stroke="#b794f6" stroke-width="2" stroke-dasharray="6,5"/>
+  <text x="360" y="108" fill="#b794f6" font-family="sans-serif" font-size="15" text-anchor="middle">격리 경계</text>
+
+  <line x1="210" y1="150" x2="210" y2="190" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="510" y1="150" x2="510" y2="190" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+
+  <rect x="100" y="190" width="520" height="60" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="360" y="213" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">Type-1 하이퍼바이저</text>
+  <text x="360" y="235" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">CPU · 메모리 · I/O 파티셔닝 + VM 간 통신 중재</text>
+
+  <line x1="360" y1="250" x2="360" y2="280" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+
+  <rect x="100" y="280" width="520" height="50" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="360" y="310" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">SoC 하드웨어 (MMU / IOMMU)</text>
+</svg>

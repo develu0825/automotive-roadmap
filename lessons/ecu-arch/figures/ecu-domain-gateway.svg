@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="도메인 아키텍처와 게이트웨이 ECU 구조">
+  <text x="360" y="25" fill="#cbd5e1" font-family="sans-serif" font-size="17" font-weight="bold" text-anchor="middle">도메인 아키텍처와 게이트웨이 ECU</text>
+
+  <rect x="60" y="30" width="170" height="55" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="145" y="52" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">파워트레인 도메인</text>
+  <text x="145" y="72" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">(고속 CAN)</text>
+
+  <rect x="490" y="30" width="170" height="55" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="575" y="52" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">섀시 도메인</text>
+  <text x="575" y="72" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">(고속 CAN)</text>
+
+  <rect x="60" y="215" width="170" height="55" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="145" y="237" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">바디 도메인</text>
+  <text x="145" y="257" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">(LIN)</text>
+
+  <rect x="490" y="215" width="170" height="55" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="575" y="237" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">인포테인먼트 도메인</text>
+  <text x="575" y="257" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">(이더넷)</text>
+
+  <rect x="300" y="120" width="120" height="60" rx="8" fill="#111a2e" stroke="#b794f6" stroke-width="2"/>
+  <text x="360" y="148" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">게이트웨이</text>
+  <text x="360" y="168" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">ECU</text>
+
+  <line x1="230" y1="57" x2="300" y2="120" stroke="#8aa0c6" stroke-width="2"/>
+  <line x1="490" y1="57" x2="420" y2="120" stroke="#8aa0c6" stroke-width="2"/>
+  <line x1="230" y1="242" x2="300" y2="180" stroke="#8aa0c6" stroke-width="2"/>
+  <line x1="490" y1="242" x2="420" y2="180" stroke="#8aa0c6" stroke-width="2"/>
+</svg>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" role="img" aria-label="모놀리식 커널과 마이크로커널 구조 비교">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#8aa0c6"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="28" fill="#cbd5e1" font-family="sans-serif" font-size="17" font-weight="bold" text-anchor="middle">모놀리식 커널 vs 마이크로커널</text>
+
+  <text x="190" y="55" fill="#38bdf8" font-family="sans-serif" font-size="15" text-anchor="middle">모놀리식 커널 (예: 리눅스)</text>
+  <rect x="60" y="70" width="260" height="130" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="190" y="92" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">커널 공간</text>
+  <text x="190" y="117" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">스케줄러 · 메모리관리</text>
+  <text x="190" y="142" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">파일시스템 · 네트워크</text>
+  <text x="190" y="167" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">디바이스 드라이버들</text>
+  <text x="190" y="190" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">(모두 한 특권 영역)</text>
+
+  <line x1="190" y1="200" x2="190" y2="220" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+  <rect x="60" y="220" width="260" height="50" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="190" y="250" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">사용자 공간: 애플리케이션</text>
+
+  <text x="530" y="55" fill="#38bdf8" font-family="sans-serif" font-size="15" text-anchor="middle">마이크로커널 (QNX Neutrino)</text>
+  <rect x="400" y="70" width="260" height="50" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="530" y="92" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">마이크로커널</text>
+  <text x="530" y="112" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">스케줄링 · IPC · 인터럽트</text>
+
+  <text x="530" y="138" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">사용자 공간 (독립 프로세스)</text>
+
+  <line x1="460" y1="120" x2="460" y2="150" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="600" y1="120" x2="600" y2="150" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+
+  <rect x="400" y="150" width="120" height="55" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="460" y="182" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">드라이버</text>
+
+  <rect x="540" y="150" width="120" height="55" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="600" y="182" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">파일시스템</text>
+
+  <rect x="400" y="215" width="120" height="55" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="460" y="247" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">네트워크</text>
+
+  <rect x="540" y="215" width="120" height="55" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="600" y="247" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">애플리케이션</text>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 150" role="img" aria-label="체인 오브 트러스트: 신뢰의 뿌리에서 애플리케이션까지 단계별 서명 검증">
+  <defs><marker id="c" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#8aa0c6"/></marker></defs>
+  <text x="360" y="22" fill="#cbd5e1" font-family="sans-serif" font-size="17" font-weight="bold" text-anchor="middle">체인 오브 트러스트</text>
+
+  <rect x="10" y="70" width="150" height="55" rx="8" fill="#111a2e" stroke="#b794f6" stroke-width="1.5"/>
+  <text x="85" y="102" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">RoT (ROM)</text>
+
+  <rect x="190" y="70" width="150" height="55" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="265" y="102" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">1차 부트로더</text>
+
+  <rect x="370" y="70" width="150" height="55" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="445" y="102" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">2차 부트로더</text>
+
+  <rect x="550" y="70" width="150" height="55" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="625" y="102" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">애플리케이션</text>
+
+  <text x="175" y="58" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">서명 검증</text>
+  <text x="355" y="58" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">서명 검증</text>
+  <text x="535" y="58" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">서명 검증</text>
+
+  <line x1="160" y1="97" x2="190" y2="97" stroke="#8aa0c6" stroke-width="2" marker-end="url(#c)"/>
+  <line x1="340" y1="97" x2="370" y2="97" stroke="#8aa0c6" stroke-width="2" marker-end="url(#c)"/>
+  <line x1="520" y1="97" x2="550" y2="97" stroke="#8aa0c6" stroke-width="2" marker-end="url(#c)"/>
+</svg>

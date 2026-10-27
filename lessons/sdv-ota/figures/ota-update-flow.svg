@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" role="img" aria-label="OTA 업데이트의 다섯 단계: 패키징부터 롤백 대비까지">
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#8aa0c6"/></marker></defs>
+  <rect x="210" y="15" width="300" height="46" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="360" y="44" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">1. 패키징 (델타 압축)</text>
+  <line x1="360" y1="61" x2="360" y2="93" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+
+  <rect x="210" y="93" width="300" height="46" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="360" y="122" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">2. 배포 (백그라운드 다운로드)</text>
+  <line x1="360" y1="139" x2="360" y2="171" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+
+  <rect x="210" y="171" width="300" height="46" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="360" y="200" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">3. 검증 (서명 확인)</text>
+  <line x1="360" y1="217" x2="360" y2="249" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+
+  <rect x="210" y="249" width="300" height="46" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="360" y="278" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">4. 설치 (정지 상태, A/B 전환)</text>
+  <line x1="360" y1="295" x2="360" y2="327" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+
+  <rect x="210" y="327" width="300" height="46" rx="8" fill="#111a2e" stroke="#b794f6" stroke-width="1.5"/>
+  <text x="360" y="356" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">5. 롤백 대비 (문제 시 이전 버전 복귀)</text>
+
+  <text x="360" y="420" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">각 차량마다 독립적으로 반복되며, fleet 전체 진행 상황을 추적한다</text>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 220" role="img" aria-label="스케줄드 트래픽, 타임 어웨어 셰이퍼의 게이트 시간표">
+  <text x="360" y="25" fill="#cbd5e1" font-family="sans-serif" font-size="17" font-weight="bold" text-anchor="middle">스케줄드 트래픽(802.1Qbv): 타임 어웨어 셰이퍼</text>
+
+  <rect x="60" y="90" width="120" height="60" fill="#111a2e" stroke="#f59e0b" stroke-width="2.5"/>
+  <text x="120" y="115" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">제어 트래픽</text>
+  <text x="120" y="138" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">게이트 열림 (1 ms)</text>
+
+  <rect x="180" y="90" width="480" height="60" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="420" y="115" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">best-effort 트래픽</text>
+  <text x="420" y="138" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">(영상 · 진단 등, 4 ms)</text>
+
+  <line x1="60" y1="150" x2="60" y2="162" stroke="#8aa0c6" stroke-width="1.5"/>
+  <line x1="180" y1="150" x2="180" y2="162" stroke="#8aa0c6" stroke-width="1.5"/>
+  <line x1="660" y1="150" x2="660" y2="162" stroke="#8aa0c6" stroke-width="1.5"/>
+
+  <text x="60" y="178" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">0</text>
+  <text x="180" y="178" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">1 ms</text>
+  <text x="660" y="178" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">5 ms</text>
+
+  <text x="420" y="205" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">5 ms 주기마다 반복</text>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 240" role="img" aria-label="끼임 방지: 모터 전류 급증을 감지해 정지·역회전하는 과정">
+  <defs><marker id="k" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#8aa0c6"/></marker></defs>
+  <text x="360" y="22" fill="#cbd5e1" font-family="sans-serif" font-size="17" font-weight="bold" text-anchor="middle">끼임 방지: 전류 급증 감지</text>
+
+  <line x1="60" y1="200" x2="690" y2="200" stroke="#8aa0c6" stroke-width="2" marker-end="url(#k)"/>
+  <line x1="60" y1="200" x2="60" y2="38" stroke="#8aa0c6" stroke-width="2" marker-end="url(#k)"/>
+  <text x="700" y="204" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">t</text>
+  <text x="60" y="30" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">전류</text>
+
+  <line x1="60" y1="100" x2="680" y2="100" stroke="#8aa0c6" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <text x="620" y="92" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">임계값</text>
+
+  <path d="M60,180 L150,175 L250,178 L350,172 L400,170" fill="none" stroke="#8aa0c6" stroke-width="2"/>
+  <path d="M400,170 L420,60 L440,58 L460,195 L680,195" fill="none" stroke="#f59e0b" stroke-width="2"/>
+
+  <circle cx="420" cy="60" r="5" fill="#f59e0b"/>
+  <text x="420" y="45" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">끼임 감지</text>
+
+  <text x="570" y="183" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">모터 정지 + 역회전</text>
+</svg>

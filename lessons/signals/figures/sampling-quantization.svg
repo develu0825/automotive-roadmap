@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="아날로그 신호를 샘플링과 양자화로 디지털 값으로 바꾸는 과정">
+  <defs><marker id="g" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#8aa0c6"/></marker></defs>
+  <text x="360" y="22" fill="#cbd5e1" font-family="sans-serif" font-size="17" font-weight="bold" text-anchor="middle">샘플링과 양자화: 연속 신호를 숫자로</text>
+
+  <line x1="60" y1="250" x2="690" y2="250" stroke="#8aa0c6" stroke-width="2" marker-end="url(#g)"/>
+  <line x1="60" y1="250" x2="60" y2="38" stroke="#8aa0c6" stroke-width="2" marker-end="url(#g)"/>
+  <text x="700" y="254" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">t</text>
+  <text x="60" y="30" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">V</text>
+
+  <line x1="60" y1="100" x2="640" y2="100" stroke="#3a4d72" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="60" y1="140" x2="640" y2="140" stroke="#3a4d72" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="60" y1="180" x2="640" y2="180" stroke="#3a4d72" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="60" y1="220" x2="640" y2="220" stroke="#3a4d72" stroke-width="1" stroke-dasharray="4,4"/>
+
+  <line x1="120" y1="45" x2="120" y2="250" stroke="#3a4d72" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="200" y1="45" x2="200" y2="250" stroke="#3a4d72" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="280" y1="45" x2="280" y2="250" stroke="#3a4d72" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="360" y1="45" x2="360" y2="250" stroke="#3a4d72" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="440" y1="45" x2="440" y2="250" stroke="#3a4d72" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="520" y1="45" x2="520" y2="250" stroke="#3a4d72" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="600" y1="45" x2="600" y2="250" stroke="#3a4d72" stroke-width="1" stroke-dasharray="4,4"/>
+
+  <path d="M60,200 C150,80 250,80 340,160 C430,240 530,240 620,150" fill="none" stroke="#38bdf8" stroke-width="2"/>
+
+  <circle cx="120" cy="180" r="4" fill="#f59e0b"/>
+  <circle cx="200" cy="100" r="4" fill="#f59e0b"/>
+  <circle cx="280" cy="100" r="4" fill="#f59e0b"/>
+  <circle cx="360" cy="140" r="4" fill="#f59e0b"/>
+  <circle cx="440" cy="220" r="4" fill="#f59e0b"/>
+  <circle cx="520" cy="180" r="4" fill="#f59e0b"/>
+  <circle cx="600" cy="140" r="4" fill="#f59e0b"/>
+
+  <line x1="80" y1="275" x2="110" y2="275" stroke="#38bdf8" stroke-width="2"/>
+  <text x="200" y="279" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">아날로그 신호</text>
+  <line x1="300" y1="275" x2="330" y2="275" stroke="#3a4d72" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="420" y="279" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">샘플링/양자화 격자</text>
+  <circle cx="520" cy="275" r="4" fill="#f59e0b"/>
+  <text x="600" y="279" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">디지털 샘플값</text>
+</svg>

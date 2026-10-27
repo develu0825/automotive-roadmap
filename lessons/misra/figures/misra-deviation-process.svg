@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 560" role="img" aria-label="MISRA C 일탈 관리 절차">
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#8aa0c6"/></marker></defs>
+  <text x="360" y="28" fill="#cbd5e1" font-family="sans-serif" font-size="17" font-weight="bold" text-anchor="middle">일탈(Deviation) 관리 절차</text>
+
+  <rect x="190" y="50" width="340" height="50" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="360" y="80" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">정적 분석에서 규칙 위반 발견</text>
+  <line x1="360" y1="100" x2="360" y2="132" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+
+  <rect x="190" y="132" width="340" height="50" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="360" y="162" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">Required / Advisory 등급 확인</text>
+  <line x1="360" y1="182" x2="360" y2="214" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+
+  <rect x="190" y="214" width="340" height="50" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="360" y="244" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">기술적 근거 작성</text>
+  <line x1="360" y1="264" x2="360" y2="296" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+
+  <rect x="190" y="296" width="340" height="50" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="360" y="326" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">위험 완화 방안 기록 (추가 검증 등)</text>
+  <line x1="360" y1="346" x2="360" y2="378" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+
+  <rect x="190" y="378" width="340" height="50" rx="8" fill="#111a2e" stroke="#b794f6" stroke-width="1.5"/>
+  <text x="360" y="408" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">리뷰어 승인 → 준수 매트릭스 기록</text>
+
+  <line x1="190" y1="157" x2="80" y2="157" stroke="#f59e0b" stroke-width="2" marker-end="url(#a)"/>
+  <rect x="20" y="440" width="300" height="60" rx="8" fill="#111a2e" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="170" y="465" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">Mandatory 등급이라면</text>
+  <text x="170" y="485" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">일탈 불가 → 반드시 코드 수정</text>
+  <line x1="80" y1="157" x2="170" y2="440" stroke="#f59e0b" stroke-width="2" marker-end="url(#a)"/>
+</svg>

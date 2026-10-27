@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 220" role="img" aria-label="MIL, SIL, PIL, HIL: 점점 현실에 가까워지는 테스트 환경">
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#8aa0c6"/></marker></defs>
+  <text x="360" y="28" fill="#cbd5e1" font-family="sans-serif" font-size="17" font-weight="bold" text-anchor="middle">MIL → SIL → PIL → HIL</text>
+
+  <rect x="20" y="60" width="140" height="56" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="90" y="92" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">MIL</text>
+  <text x="90" y="135" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">모델 시뮬레이션</text>
+
+  <rect x="200" y="60" width="140" height="56" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="270" y="92" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">SIL</text>
+  <text x="270" y="135" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">PC에서 코드 실행</text>
+
+  <rect x="380" y="60" width="140" height="56" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="450" y="92" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">PIL</text>
+  <text x="450" y="135" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">실제 프로세서</text>
+
+  <rect x="560" y="60" width="140" height="56" rx="8" fill="#111a2e" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="630" y="92" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">HIL</text>
+  <text x="630" y="135" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">실제 ECU + 하드웨어</text>
+
+  <line x1="160" y1="88" x2="200" y2="88" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="340" y1="88" x2="380" y2="88" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="520" y1="88" x2="560" y2="88" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+
+  <text x="360" y="195" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">뒤로 갈수록 현실에 가깝지만 시간과 비용이 커진다</text>
+</svg>

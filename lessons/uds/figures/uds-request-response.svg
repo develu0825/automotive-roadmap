@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 380" role="img" aria-label="UDS 요청과 긍정/부정 응답 구조">
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#8aa0c6"/></marker></defs>
+  <text x="360" y="30" fill="#cbd5e1" font-family="sans-serif" font-size="17" font-weight="bold" text-anchor="middle">UDS 요청/응답 흐름</text>
+
+  <rect x="280" y="50" width="160" height="50" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="360" y="80" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">진단기</text>
+
+  <line x1="360" y1="100" x2="360" y2="150" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+  <text x="470" y="128" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">22 F1 90 (요청)</text>
+
+  <rect x="280" y="150" width="160" height="50" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="360" y="180" fill="#cbd5e1" font-family="sans-serif" font-size="16" text-anchor="middle">ECU</text>
+
+  <line x1="300" y1="200" x2="150" y2="265" stroke="#38bdf8" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="420" y1="200" x2="570" y2="265" stroke="#f59e0b" stroke-width="2" marker-end="url(#a)"/>
+
+  <rect x="40" y="275" width="220" height="60" rx="8" fill="#111a2e" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="150" y="300" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">62 F1 90 ...</text>
+  <text x="150" y="320" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">긍정 응답 (SID+0x40)</text>
+
+  <rect x="460" y="275" width="220" height="60" rx="8" fill="#111a2e" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="570" y="300" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">7F 22 31</text>
+  <text x="570" y="320" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">부정 응답 (0x7F+SID+NRC)</text>
+</svg>

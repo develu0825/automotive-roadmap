@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 270" role="img" aria-label="PWM 신호의 듀티 사이클과 평균 전압의 관계">
+  <defs><marker id="h" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#8aa0c6"/></marker></defs>
+  <text x="360" y="22" fill="#cbd5e1" font-family="sans-serif" font-size="17" font-weight="bold" text-anchor="middle">PWM: 듀티 사이클과 평균 전압</text>
+
+  <line x1="60" y1="220" x2="690" y2="220" stroke="#8aa0c6" stroke-width="2" marker-end="url(#h)"/>
+  <line x1="60" y1="220" x2="60" y2="38" stroke="#8aa0c6" stroke-width="2" marker-end="url(#h)"/>
+  <text x="700" y="224" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">t</text>
+  <text x="60" y="30" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">V</text>
+
+  <text x="40" y="74" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="end">Vs</text>
+  <text x="40" y="224" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="end">0</text>
+
+  <polyline points="60,220 60,70 114,70 114,220 240,220 240,70 294,70 294,220 420,220 420,70 474,70 474,220 600,220"
+            fill="none" stroke="#8aa0c6" stroke-width="2"/>
+
+  <line x1="60" y1="175" x2="600" y2="175" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5,5"/>
+  <text x="610" y="179" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="start">V_avg</text>
+
+  <line x1="60" y1="235" x2="114" y2="235" stroke="#8aa0c6" stroke-width="1.5" marker-end="url(#h)"/>
+  <text x="87" y="252" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">D·T</text>
+
+  <line x1="60" y1="190" x2="240" y2="190" stroke="#8aa0c6" stroke-width="1.5" marker-end="url(#h)"/>
+  <text x="150" y="208" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">T</text>
+</svg>

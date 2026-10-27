@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" role="img" aria-label="ECU 내부 구성 요소: MCU, PMIC, 트랜시버, 센서 액추에이터 인터페이스">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#8aa0c6"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="25" fill="#cbd5e1" font-family="sans-serif" font-size="17" font-weight="bold" text-anchor="middle">ECU 내부 구성 요소</text>
+
+  <text x="160" y="15" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">배터리 (12V)</text>
+  <line x1="160" y1="20" x2="160" y2="38" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+  <rect x="80" y="40" width="160" height="55" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="160" y="62" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">PMIC</text>
+  <text x="160" y="82" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">(전원 관리)</text>
+
+  <text x="560" y="15" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">CAN/LIN 버스</text>
+  <line x1="560" y1="20" x2="560" y2="38" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+  <rect x="480" y="40" width="160" height="55" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="560" y="62" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">트랜시버</text>
+  <text x="560" y="82" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">(CAN/LIN)</text>
+
+  <rect x="290" y="120" width="140" height="60" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="360" y="148" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">MCU</text>
+  <text x="360" y="168" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">(연산 두뇌)</text>
+
+  <polyline points="160,95 160,150 290,150" fill="none" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+  <polyline points="560,95 560,150 430,150" fill="none" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+
+  <rect x="280" y="220" width="160" height="55" rx="8" fill="#111a2e" stroke="#3a4d72" stroke-width="1.5"/>
+  <text x="360" y="242" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">센서/액추에이터</text>
+  <text x="360" y="262" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">인터페이스</text>
+
+  <line x1="360" y1="220" x2="360" y2="180" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+
+  <line x1="360" y1="275" x2="360" y2="295" stroke="#8aa0c6" stroke-width="2" marker-end="url(#a)"/>
+  <text x="360" y="312" fill="#cbd5e1" font-family="sans-serif" font-size="15" text-anchor="middle">센서 입력 ↔ 액추에이터 출력</text>
+</svg>
