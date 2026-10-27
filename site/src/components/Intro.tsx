@@ -29,15 +29,15 @@ export function Intro({ firstLessonId, lessonCount, onClose, onStart }: Props) {
         <X size={20} aria-hidden="true" />
       </button>
       <p className="intro-kicker">lecture self-study</p>
-      <h2 id="intro-title">자동차 개발 로드맵</h2>
+      <h2 id="intro-title">자동차 임베디드 개발 로드맵</h2>
       <p className="intro-lead">
-        공학 기초부터 파워트레인·섀시·자율주행까지, 자동차 개발에 필요한 주제 {lessonCount}개를 강의로 읽어 나가는 지도입니다.
+        프로그래밍·HW 기초부터 BSP·Android Automotive·AUTOSAR 까지, 자동차 임베디드 개발에 필요한 주제 {lessonCount}개를 강의로 읽어 나가는 지도입니다.
         원 하나가 강의 하나이고, 선은 먼저 읽어 두면 좋은 강의를 잇습니다.
       </p>
       <ol className="intro-steps">
         <li>
           <strong>가운데 동심원에서 출발</strong>
-          <span>세 트랙이 함께 쓰는 공학수학·물리·전기전자 기초가 가운데 동심원에 있습니다. 그 바깥으로 왼쪽은 파워트레인·전동화, 오른쪽 아래는 차량동역학·섀시, 오른쪽 위는 자율주행·전장·SW 트랙이 뻗고, 관심 분야의 트랙을 따라 읽어 나갑니다.</span>
+          <span>세 트랙이 함께 쓰는 프로그래밍·디지털/HW 기초가 가운데 동심원에 있습니다. 그 바깥으로 아래쪽은 플랫폼&OS(BSP·리눅스·Android Automotive·AUTOSAR), 왼쪽 위는 통신&진단(CAN·이더넷·SOME/IP·UDS), 오른쪽 위는 안전·보안·응용(ISO 26262·21434·제어) 트랙이 뻗고, 관심 분야의 트랙을 따라 읽어 나갑니다.</span>
         </li>
         <li>
           <strong>원을 눌러 강의 읽기</strong>

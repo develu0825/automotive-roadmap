@@ -1,11 +1,12 @@
 ---
 id: sdv-ota
 title: "SDV · OTA"
-branch: future
-requires: [auto-ethernet, embedded-sw, sotif]
+branch: diag-ota
+requires: [uds, bootloader]
 hours: 3
-summary: "소프트웨어로 기능이 정의되는 차량과 무선 업데이트(OTA)"
+summary: "소프트웨어로 기능이 정의되는 차량(SDV)과 무선 업데이트(OTA)"
 ---
+
 
 # SDV · OTA
 

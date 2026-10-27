@@ -1,132 +1,102 @@
-# 자동차 개발 로드맵 — 가운데 공통 기초에서 세 트랙(파워트레인·섀시·자율주행)이 뻗어나간다.
-# robotics-roadmap 엔진을 역공학해 자동차 도메인으로 재구성한 커리큘럼 지도.
+# 자동차 임베디드 개발 로드맵 — 가운데 프로그래밍·HW 기초에서 플랫폼/통신/안전 세 갈래로 뻗는다.
+# robotics-roadmap 엔진을 역공학해 자동차 임베디드(BSP·Android Automotive·AUTOSAR) 중심으로 재구성.
 
 hub:
   rings:
-    - branches: [fmath, fee]
+    - branches: [prog, hw]
 
 trees:
-  - id: autonomy
-    title: "자율주행 & 전장·SW"
+  - id: platform
+    title: "플랫폼 & OS"
     color: "#b794f6"
     angle: 180
-    branches: [sw-core, perception, fusion, network, planning, adas, future]
-  - id: powertrain
-    title: "파워트레인 & 전동화"
-    color: "#ff7a45"
+    branches: [embedded-core, bsp, linux-plat, android, autosar, virt]
+  - id: comms
+    title: "통신 & 진단"
+    color: "#38bdf8"
     angle: 300
-    branches: [engine, combustion, driveline, emotor, battery, fuelcell]
-  - id: chassis
-    title: "차량동역학 & 섀시"
-    color: "#35c2f0"
+    branches: [veh-net, auto-eth, middleware, diag-ota]
+  - id: safetyapp
+    title: "안전·보안·응용"
+    color: "#f59e0b"
     angle: 60
-    branches: [tire, suspension, steering, braking, vdyn, nvh]
+    branches: [safety, security, io-ctrl]
 
 branches:
-  - id: fmath
-    title: "공학수학 · 물리"
-    summary: "벡터·미적분·동역학·확률. 자동차의 운동·하중·신호를 숫자로 다루는 공통 언어"
+  - id: prog
+    title: "프로그래밍 기초"
+    summary: "C/C++ 와 자료구조·알고리즘. 임베디드 소프트웨어를 쓰는 언어와 사고의 토대"
     color: "#d6d3d1"
 
-  - id: fee
-    title: "전기 · 전자 기초"
-    summary: "회로·신호·센서. 전동화와 전장 소프트웨어로 들어가는 입구"
-    color: "#38bdf8"
+  - id: hw
+    title: "디지털 · HW 기초"
+    summary: "디지털 논리와 MCU 구조·메모리. 소프트웨어가 올라가는 하드웨어를 읽는 눈"
+    color: "#22d3ee"
 
-  - id: sw-core
-    title: "제어 · SW 핵심"
-    summary: "신호처리·제어이론·상태추정·임베디드. 자율주행과 전장이 공통으로 딛는 소프트웨어 뼈대"
+  - id: embedded-core
+    title: "임베디드 핵심"
+    summary: "베어메탈 펌웨어에서 RTOS·메모리/링커를 거쳐 리눅스 커널까지, 모든 차량 SW가 딛는 뼈대"
     color: "#cbd5e1"
     core: true
 
-  - id: perception
-    title: "인지 센서"
-    summary: "카메라·레이더·라이다로 주변을 읽고 객체를 찾아내는 인지 파이프라인"
-    color: "#60a5fa"
-
-  - id: fusion
-    title: "센서 융합 · 측위"
-    summary: "여러 센서를 섞어 차의 위치와 주변 지도를 아는 방법. 퓨전·측위·SLAM"
-    color: "#a78bfa"
-
-  - id: network
-    title: "전장 · 네트워크"
-    summary: "ECU 와 CAN·이더넷. 센서·제어기를 한 차 위에서 잇는 전장 아키텍처"
-    color: "#38bdf8"
-
-  - id: planning
-    title: "판단 · 경로계획"
-    summary: "상황을 판단하고 안전한 경로를 만들며 주변 거동을 예측하는 의사결정"
-    color: "#a3e635"
-
-  - id: adas
-    title: "ADAS · 기능안전"
-    summary: "ACC·LKAS·AEB 같은 운전보조와 ISO 26262·SOTIF 안전 체계"
+  - id: bsp
+    title: "BSP · 보드 브링업"
+    summary: "부트로더·디바이스 트리·클럭/핀뮤잉. 새 보드에 OS 를 처음 올리는 보드 지원 패키지"
     color: "#fb923c"
 
-  - id: future
-    title: "미래 모빌리티"
-    summary: "아직 굳지 않은 최전선. V2X 협력주행, L4+ 완전자율, 소프트웨어 정의 차량(SDV)"
+  - id: linux-plat
+    title: "리눅스 플랫폼"
+    summary: "디바이스 드라이버·Yocto 빌드 시스템·유저공간. 차량용 리눅스 플랫폼을 만드는 길"
+    color: "#4ade80"
+
+  - id: android
+    title: "Android Automotive"
+    summary: "AOSP·AAOS·VHAL·CarService. 차량용 안드로이드(IVI·클러스터) 플랫폼"
+    color: "#a3e635"
+
+  - id: autosar
+    title: "AUTOSAR"
+    summary: "Classic 과 Adaptive. 차량 ECU 소프트웨어의 표준 아키텍처"
+    color: "#818cf8"
+
+  - id: virt
+    title: "가상화 · 하이퍼바이저"
+    summary: "한 SoC 위에 여러 OS 를 안전하게 통합하는 하이퍼바이저와 상용 RTOS(QNX)"
     color: "#f87171"
     outer: true
 
-  - id: engine
-    title: "내연기관"
-    summary: "열·유체에서 출발해 4행정 사이클·흡배기·과급까지, 연료를 힘으로 바꾸는 엔진"
-    color: "#fbbf24"
+  - id: veh-net
+    title: "차량 네트워크"
+    summary: "CAN·LIN·FlexRay 와 ECU 전장. 차 안의 제어기들을 잇는 버스"
+    color: "#38bdf8"
 
-  - id: combustion
-    title: "연소 · 배기"
-    summary: "연소와 노킹, 배기 규제와 후처리(촉매·DPF·SCR)"
-    color: "#f59e0b"
-
-  - id: driveline
-    title: "변속기 · 구동계"
-    summary: "토크·속도를 바퀴로 전하는 변속기와 차동·AWD 구동계"
-    color: "#818cf8"
-
-  - id: emotor
-    title: "전기구동 · 모터"
-    summary: "구동 모터와 인버터, FOC 모터 제어로 전기로 바퀴를 돌리는 길"
-    color: "#2dd4bf"
-
-  - id: battery
-    title: "배터리 · BMS"
-    summary: "셀 화학과 팩, SOC/SOH 를 추정·보호하는 BMS, 충전과 열관리"
-    color: "#4ade80"
-
-  - id: fuelcell
-    title: "수소 · 연료전지"
-    summary: "수소-산소 전기화학으로 전기를 만드는 연료전지와 FCEV 시스템"
-    color: "#22d3ee"
-
-  - id: tire
-    title: "타이어 · 접지"
-    summary: "마찰원·슬립·하중이동으로 코너링·제동력이 생기는 접지의 물리"
-    color: "#f472b6"
-
-  - id: suspension
-    title: "서스펜션 · 현가"
-    summary: "현가 지오메트리와 스프링·댐퍼, 액티브 서스펜션의 승차감-핸들링 균형"
-    color: "#35c2f0"
-
-  - id: steering
-    title: "조향"
-    summary: "조향 기구와 EPS/MDPS, 조향감과 스티어-바이-와이어"
+  - id: auto-eth
+    title: "차량 이더넷"
+    summary: "Automotive Ethernet 과 TSN. 대역폭이 큰 차세대 차량 백본"
     color: "#60a5fa"
 
-  - id: braking
-    title: "제동"
-    summary: "유압 제동계와 ABS·EBD, 유압+회생 협조제어"
+  - id: middleware
+    title: "통신 미들웨어"
+    summary: "SOME/IP·DDS. 서비스 지향(SOA) 차량 소프트웨어의 통신 계층"
+    color: "#a78bfa"
+
+  - id: diag-ota
+    title: "진단 · OTA"
+    summary: "UDS 진단과 플래싱, SDV 무선 업데이트(OTA)"
+    color: "#2dd4bf"
+
+  - id: safety
+    title: "기능안전"
+    summary: "ISO 26262·ASIL·MISRA C. 고장이 사람을 다치게 하지 않도록 하는 체계"
+    color: "#f59e0b"
+
+  - id: security
+    title: "사이버보안"
+    summary: "ISO/SAE 21434·보안 부팅·암호. 해킹으로부터 차량을 지키는 방어"
     color: "#fb7185"
 
-  - id: vdyn
-    title: "주행 동역학 · 안정성"
-    summary: "요·롤·피치 차량 운동과 핸들링, ESC/VDC 자세제어"
-    color: "#fbbf24"
-
-  - id: nvh
-    title: "NVH · 승차감"
-    summary: "소음·진동의 전달 경로와 방진·차음, 모달·CAE 해석"
-    color: "#a78bfa"
+  - id: io-ctrl
+    title: "센서 · 제어 응용"
+    summary: "센서 I/O·제어·바디 ECU. 임베디드 위에서 돌아가는 실제 차량 기능"
+    color: "#f472b6"
 

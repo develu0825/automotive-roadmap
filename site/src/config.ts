@@ -8,13 +8,13 @@ export const CONFIG = {
   // published example site; vite.config.ts writes these into index.html
   share: {
     siteUrl: 'https://develu0825.github.io/car-roadmap/',
-    title: '자동차 개발 로드맵',
-    description: '자동차 개발자가 되기 위한 오픈소스 독학 커리큘럼. 파워트레인·섀시·자율주행 강의를 선수 관계 지도로 따라가며 읽습니다.',
+    title: '자동차 임베디드 개발 로드맵',
+    description: '자동차 임베디드 개발자가 되기 위한 오픈소스 독학 커리큘럼. BSP·Android Automotive·AUTOSAR 등 플랫폼·통신·안전 강의를 선수 관계 지도로 따라가며 읽습니다.',
     // site/public/og.png. Link previews are cached by the image's URL, so bump `v` whenever the picture changes
     image: 'og.png?v=1',
     imageWidth: 1200,
     imageHeight: 630,
-    imageAlt: '자동차 개발 로드맵 커리큘럼 지도. 가운데 공통 기초 동심원에서 파워트레인·전동화, 차량동역학·섀시, 자율주행·전장 트리가 뻗는다',
+    imageAlt: '자동차 임베디드 개발 로드맵 커리큘럼 지도. 가운데 프로그래밍·HW 기초에서 플랫폼&OS, 통신&진단, 안전&보안&응용 트리가 뻗는다',
     locale: 'ko_KR',
   },
 
@@ -103,8 +103,8 @@ export const CONFIG = {
     nebulaStrength: 0.3,
     // trees whose clouds are thinned near the hub, by this share at the rim easing to none at three times its radius, so
     // the clouds stay clear of the hub's lessons; amber reads much brighter than the other colours there
-    innerCut: { autonomy: 0.4, chassis: 0.4, powertrain: 0.6 } as Record<string, number>,
-    treeDensity: { powertrain: 0.7 } as Record<string, number>, // a tree's clouds, as a share of the others' brightness
+    innerCut: { platform: 0.4, comms: 0.4, safetyapp: 0.6 } as Record<string, number>,
+    treeDensity: { safetyapp: 0.7 } as Record<string, number>, // a tree's clouds, as a share of the others' brightness
     nebulaSpread: 1.7, // the clouds fade out by this many times the distance from the centre to the map's farthest point
     // stars behind the clouds, scattered over the same square; most are small, a few large
     stars: { count: 1400, seed: 7, minSize: 1.6, maxSize: 4.4, color: '#dbe7ff', brightness: 1.5, blinkShare: 0.06 },

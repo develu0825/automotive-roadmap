@@ -1,11 +1,12 @@
 ---
 id: auto-ethernet
 title: "차량 이더넷 · 존"
-branch: network
-requires: [ecu-arch]
+branch: auto-eth
+requires: [can-lin]
 hours: 3
 summary: "대역폭이 큰 Automotive Ethernet 과 존(zone) 아키텍처로의 전환"
 ---
+
 
 # 차량 이더넷 · 존
 

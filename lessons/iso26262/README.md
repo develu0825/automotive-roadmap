@@ -1,11 +1,12 @@
 ---
 id: iso26262
 title: "기능안전 ISO 26262"
-branch: adas
+branch: safety
 requires: [embedded-sw]
 hours: 3
 summary: "ASIL 등급·안전 수명주기·FMEA 로 고장을 다루는 기능안전"
 ---
+
 
 # 기능안전 ISO 26262
 

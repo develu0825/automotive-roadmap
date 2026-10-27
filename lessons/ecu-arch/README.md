@@ -1,11 +1,12 @@
 ---
 id: ecu-arch
 title: "ECU · 전장 아키텍처"
-branch: network
+branch: veh-net
 requires: [can-lin]
 hours: 3
 summary: "ECU 구성과 전원·접지, 도메인으로 묶는 전장 아키텍처"
 ---
+
 
 # ECU · 전장 아키텍처
 

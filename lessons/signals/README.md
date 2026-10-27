@@ -1,11 +1,12 @@
 ---
 id: signals
-title: "신호 · 센서"
-branch: fee
-requires: [circuits]
+title: "센서 I/O · 신호"
+branch: io-ctrl
+requires: [mcu-arch]
 hours: 2
 summary: "아날로그·디지털 신호와 센서/액추에이터. 측정값이 전기 신호가 되는 과정"
 ---
+
 
 # 신호 · 센서
 

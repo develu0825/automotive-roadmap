@@ -119,7 +119,7 @@ describe('curriculum', () => {
   })
 
   it('has exactly one starting point', () => {
-    expect(c.lessons.filter((p) => p.requires.length === 0).map((p) => p.id)).toEqual(['calc-vectors'])
+    expect(c.lessons.filter((p) => p.requires.length === 0).map((p) => p.id)).toEqual(['c-basics'])
   })
 
   it('lays out every lesson without overlapping labels', async () => {

@@ -1,11 +1,12 @@
 ---
 id: control-theory
-title: "제어이론 (PID · 상태공간)"
-branch: sw-core
-requires: [signal-processing, dynamics-basics]
+title: "제어 기초 (PID)"
+branch: io-ctrl
+requires: [signals]
 hours: 3
 summary: "피드백·PID·상태공간. 원하는 상태로 시스템을 수렴시키는 제어의 핵심"
 ---
+
 
 # 제어이론 (PID · 상태공간)
 

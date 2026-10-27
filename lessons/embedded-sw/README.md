@@ -1,11 +1,12 @@
 ---
 id: embedded-sw
 title: "임베디드 SW · RTOS"
-branch: sw-core
-requires: [state-estimation]
+branch: embedded-core
+requires: [baremetal]
 hours: 3
 summary: "MCU 펌웨어와 실시간 운영체제. 제어기를 실제 하드웨어 위에서 돌리기"
 ---
+
 
 # 임베디드 SW · RTOS
 

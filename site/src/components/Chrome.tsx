@@ -21,14 +21,14 @@ export function TopBar({
 
   return (
     <header className="topbar">
-      <a className="brand" href="#/" aria-label="자동차 개발 로드맵, 처음 화면">
+      <a className="brand" href="#/" aria-label="자동차 임베디드 개발 로드맵, 처음 화면">
         <svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true">
           <circle cx="16" cy="16" r="13" fill="none" stroke="currentColor" strokeWidth="2.5" />
           <circle cx="16" cy="16" r="6" fill="none" stroke="currentColor" strokeWidth="2" opacity="0.6" />
           <circle cx="16" cy="16" r="2.5" fill="currentColor" />
         </svg>
         <span>
-          자동차 <em>로드맵</em>
+          자동차 임베디드 <em>로드맵</em>
         </span>
       </a>
 

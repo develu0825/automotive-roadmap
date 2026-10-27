@@ -1,11 +1,12 @@
 ---
 id: can-lin
 title: "CAN · LIN 통신"
-branch: network
+branch: veh-net
 requires: [embedded-sw]
 hours: 2
 summary: "차량 내부를 잇는 CAN·LIN 버스 프로토콜과 메시지 설계"
 ---
+
 
 # CAN · LIN 통신
 
