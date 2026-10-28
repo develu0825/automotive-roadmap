@@ -1,13 +1,13 @@
 // Single source of truth for site settings. Curriculum content lives in ../lessons/.
 
 export const CONFIG = {
-  repoUrl: 'https://github.com/develu0825/car-roadmap',
+  repoUrl: 'https://github.com/develu0825/automotive-roadmap',
   repoBranch: 'main',
 
   // link previews on LinkedIn, KakaoTalk and Slack (Open Graph). Crawlers need absolute URLs, so they point at the
   // published example site; vite.config.ts writes these into index.html
   share: {
-    siteUrl: 'https://develu0825.github.io/car-roadmap/',
+    siteUrl: 'https://develu0825.github.io/automotive-roadmap/',
     title: '자동차 임베디드 개발 로드맵',
     description: '자동차 임베디드 개발자가 되기 위한 오픈소스 독학 커리큘럼. BSP·Android Automotive·AUTOSAR 등 플랫폼·통신·안전 강의를 선수 관계 지도로 따라가며 읽습니다.',
     // site/public/og.png. Link previews are cached by the image's URL, so bump `v` whenever the picture changes
