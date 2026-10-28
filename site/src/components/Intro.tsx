@@ -47,13 +47,13 @@ export function Intro({ firstLessonId, lessonCount, onClose, onStart }: Props) {
           <strong>강의 끝의 퀴즈 풀기</strong>
           <span>
             틀린 문항은 해설을 보여 주고, 틀린 문항만 같은 원리의 다른 문항으로 다시 풉니다. 틀린 문항이 남지 않으면 통과이고 이어지는 강의가 밝아집니다.
-            답안은 <code>progress/&lt;강의&gt;.json</code> 에 저장되고, fork 에 커밋해 두면 다른 기기에서도 이어서 볼 수 있습니다.
+            진행 상황은 이 브라우저에 자동으로 저장되어, 다시 방문해도 이어집니다.
           </span>
         </li>
       </ol>
       <p className="intro-note">
-        선수 관계는 권장 순서일 뿐 잠금이 아닙니다. 퀴즈 답안은 리포에 저장되므로 리포의 <code>site/</code> 에서{' '}
-        <code>npm run dev</code> 로 띄운 지도에서 풉니다.
+        선수 관계는 권장 순서일 뿐 잠금이 아닙니다. 진행 상황은 브라우저(localStorage)에 저장됩니다. 로컬에서 <code>site/</code> 를{' '}
+        <code>npm run dev</code> 로 띄우면 답안이 <code>progress/</code> 파일로도 남아 여러 기기에서 공유할 수 있습니다.
       </p>
       <div className="intro-actions">
         <button type="button" className="primary-button" onClick={() => onStart(firstLessonId)}>

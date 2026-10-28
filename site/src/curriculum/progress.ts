@@ -1,4 +1,5 @@
 import { useSyncExternalStore } from 'react'
+import { CONFIG } from '../config'
 import { initialAttempts } from './load'
 import { clearedAt, type Attempt } from './quiz'
 import type { Curriculum, NodeState, Status } from './types'
@@ -6,7 +7,33 @@ import type { Curriculum, NodeState, Status } from './types'
 /** Quiz attempts per lesson id, as recorded in progress/<id>.json. */
 export type ProgressFile = Readonly<Record<string, readonly Attempt[]>>
 
-let current: ProgressFile = initialAttempts
+const KEY = CONFIG.storage.progressKey
+
+/** the learner's own attempts, kept in the browser so a built (static) site remembers progress across reloads */
+function loadLocal(): Record<string, Attempt[]> {
+  try {
+    const raw: unknown = JSON.parse(localStorage.getItem(KEY) ?? 'null')
+    if (!raw || typeof raw !== 'object') return {}
+    const out: Record<string, Attempt[]> = {}
+    for (const [id, attempts] of Object.entries(raw as Record<string, unknown>)) {
+      if (Array.isArray(attempts)) out[id] = attempts as Attempt[]
+    }
+    return out
+  } catch {
+    return {}
+  }
+}
+
+function saveLocal(state: ProgressFile) {
+  try {
+    localStorage.setItem(KEY, JSON.stringify(state))
+  } catch {
+    /* storage blocked or full (e.g. private mode): progress simply will not persist */
+  }
+}
+
+// committed progress/ files seed the map; the browser's own record (localStorage) takes precedence
+let current: ProgressFile = { ...initialAttempts, ...loadLocal() }
 const listeners = new Set<() => void>()
 
 export const progress = {
@@ -15,9 +42,10 @@ export const progress = {
     listeners.add(listener)
     return () => listeners.delete(listener)
   },
-  /** the dev server has written `attempt` to the lesson's result file; show it without waiting for a reload */
+  /** record an attempt (graded in the page, or returned by the dev server) and remember it in the browser */
   add(id: string, attempt: Attempt) {
     current = { ...current, [id]: [...(current[id] ?? []), attempt] }
+    saveLocal(current)
     listeners.forEach((l) => l())
   },
 }

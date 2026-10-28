@@ -21,6 +21,8 @@ export const CONFIG = {
   storage: {
     introSeenKey: 'car.intro-seen.v1',
     panelWidthKey: 'car.panel-width.v1',
+    // the learner's quiz progress, kept in the browser so a built (static) site remembers it across reloads
+    progressKey: 'car.progress.v1',
   },
 
   lesson: {
