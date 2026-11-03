@@ -140,9 +140,9 @@ export function Holygraph({
       })
     zoomRef.current = z
     svg.call(z)
-    // Gesture mapping (override d3's defaults): two-finger touchpad scroll pans,
-    // pinch (ctrl+wheel) zooms, and a mouse/pen drag zooms.
-    svg.on('wheel.zoom', null).on('dblclick.zoom', null).on('mousedown.zoom', null)
+    // Drag pans the map (d3 default). Two-finger touchpad scroll pans too;
+    // pinch (ctrl+wheel) zooms. (d3's wheel-zoom and double-click-zoom are removed.)
+    svg.on('wheel.zoom', null).on('dblclick.zoom', null)
 
     const onWheel = (e: WheelEvent) => {
       e.preventDefault()
@@ -158,63 +158,12 @@ export function Holygraph({
     }
     svgEl.addEventListener('wheel', onWheel, { passive: false })
 
-    // mouse/pen drag on empty space → zoom toward the press point (drag up = zoom in)
-    let dragging = false
-    let lastY = 0
-    let moved = false
-    let center: [number, number] = [0, 0]
-    const onDown = (e: PointerEvent) => {
-      if (e.pointerType === 'touch' || e.button !== 0) return
-      if ((e.target as Element).closest('.hg-node')) return
-      dragging = true
-      moved = false
-      lastY = e.clientY
-      const box = svgEl.getBoundingClientRect()
-      center = [e.clientX - box.left, e.clientY - box.top]
-      svgEl.setPointerCapture(e.pointerId)
-    }
-    const onMove = (e: PointerEvent) => {
-      if (!dragging) return
-      const dy = e.clientY - lastY
-      lastY = e.clientY
-      if (dy !== 0) moved = true
-      z.scaleBy(svg, Math.pow(2, -dy * 0.005), center)
-    }
-    const onUp = (e: PointerEvent) => {
-      if (!dragging) return
-      dragging = false
-      try {
-        svgEl.releasePointerCapture(e.pointerId)
-      } catch {
-        /* pointer already released */
-      }
-      if (moved) {
-        // the drag just zoomed — swallow the trailing click so it doesn't clear the selection
-        svgEl.addEventListener(
-          'click',
-          (ev) => {
-            ev.stopPropagation()
-            ev.preventDefault()
-          },
-          { capture: true, once: true },
-        )
-      }
-    }
-    svgEl.addEventListener('pointerdown', onDown)
-    svgEl.addEventListener('pointermove', onMove)
-    svgEl.addEventListener('pointerup', onUp)
-    svgEl.addEventListener('pointercancel', onUp)
-
     apply(fitTransform(CONFIG.zoom.initialMinScale), false)
     const onResize = () => apply(fitTransform(CONFIG.zoom.initialMinScale), false)
     window.addEventListener('resize', onResize)
     return () => {
       window.removeEventListener('resize', onResize)
       svgEl.removeEventListener('wheel', onWheel)
-      svgEl.removeEventListener('pointerdown', onDown)
-      svgEl.removeEventListener('pointermove', onMove)
-      svgEl.removeEventListener('pointerup', onUp)
-      svgEl.removeEventListener('pointercancel', onUp)
       svg.on('.zoom', null)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
