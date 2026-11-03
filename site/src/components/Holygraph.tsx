@@ -128,23 +128,17 @@ export function Holygraph({
   }))
 
   useEffect(() => {
-    const svgEl = svgRef.current!
-    const svg = select(svgEl)
+    const svg = select(svgRef.current!)
     const z = zoom<SVGSVGElement, unknown>()
       .scaleExtent([CONFIG.zoom.min, CONFIG.zoom.max])
       .on('zoom', (e) => {
         viewportRef.current!.setAttribute('transform', e.transform.toString())
         sceneRef.current?.setTransform({ k: e.transform.k, x: e.transform.x, y: e.transform.y })
         const grow = Math.min(Math.max(CONFIG.zoom.labelMinPx / (CONFIG.layout.labelFontSize * e.transform.k), 1), CONFIG.zoom.labelMaxGrow)
-        svgEl.style.setProperty('--label-grow', grow.toFixed(3))
+        svgRef.current!.style.setProperty('--label-grow', grow.toFixed(3))
       })
     zoomRef.current = z
-    svg.call(z)
-    // Don't capture wheel/pinch on the map — let the browser handle it natively,
-    // so a trackpad pinch zooms the WHOLE page (and you can pan it) just like any
-    // normal page/blog. Map-only zoom stays on the +/- buttons; drag still pans.
-    svg.on('wheel.zoom', null).on('dblclick.zoom', null)
-
+    svg.call(z).on('dblclick.zoom', null)
     apply(fitTransform(CONFIG.zoom.initialMinScale), false)
     const onResize = () => apply(fitTransform(CONFIG.zoom.initialMinScale), false)
     window.addEventListener('resize', onResize)
