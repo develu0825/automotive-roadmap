@@ -1,6 +1,6 @@
 import type { Root } from 'hast'
 import 'katex/dist/katex.min.css'
-import { BookOpen, ClipboardCheck, Clock, ExternalLink, ListChecks, X } from './icons'
+import { BookOpen, ClipboardCheck, Clock, ExternalLink, ListChecks, Minus, Plus, X } from './icons'
 import { memo, useEffect, useRef, useState } from 'react'
 import { CONFIG } from '../config'
 import { loadBody } from '../curriculum/load'
@@ -28,6 +28,11 @@ const STATE_TEXT: Record<NodeState, string> = {
 function formatHours(h: number): string {
   return `강의와 퀴즈 약 ${h}시간`
 }
+
+const ZOOM_MIN = 1
+const ZOOM_MAX = 4
+const ZOOM_STEP = 1.25
+const clampZoom = (z: number) => Math.min(ZOOM_MAX, Math.max(ZOOM_MIN, z))
 
 function LessonChip({ c, p, id, onSelect }: { c: Curriculum; p: ProgressFile; id: string; onSelect(id: string): void }) {
   const lesson = c.byId.get(id)!
@@ -89,6 +94,8 @@ export const LessonPanel = memo(function LessonPanel({ curriculum: c, progressFi
   const unlocks = c.unlocks.get(lessonId) ?? []
   const [body, setBody] = useState<Root | null>(null)
   const [failed, setFailed] = useState(false)
+  // reading zoom: scale the whole lesson so figures and text get bigger; two-finger scroll then pans it freely
+  const [zoom, setZoom] = useState(1)
   const scrollRef = useRef<HTMLDivElement>(null)
   const headingRef = useRef<HTMLHeadingElement>(null)
   const quiz = useQuizNav(lessonId)
@@ -110,11 +117,27 @@ export const LessonPanel = memo(function LessonPanel({ curriculum: c, progressFi
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: 0 })
     headingRef.current?.focus({ preventScroll: true })
+    setZoom(1)
   }, [lessonId])
+
+  // Ctrl/⌘ + wheel is a trackpad pinch: zoom the lesson instead of the browser page. A plain two-finger
+  // scroll falls through to the native scroll, which pans the zoomed-up content in both directions.
+  useEffect(() => {
+    const el = scrollRef.current
+    if (!el) return
+    const onWheel = (e: WheelEvent) => {
+      if (!e.ctrlKey && !e.metaKey) return
+      e.preventDefault()
+      setZoom((z) => clampZoom(z * Math.pow(2, -e.deltaY * 0.01)))
+    }
+    el.addEventListener('wheel', onWheel, { passive: false })
+    return () => el.removeEventListener('wheel', onWheel)
+  }, [])
 
   return (
     <aside className={`panel ${quiz.back ? 'has-quiz-return' : ''}`} aria-labelledby="panel-title" style={{ ['--branch' as string]: branch.color }}>
-      <div className="panel-scroll" ref={scrollRef}>
+      <div className={`panel-scroll ${zoom > 1 ? 'is-zoomed' : ''}`} ref={scrollRef}>
+        <div className="panel-zoom" style={zoom === 1 ? undefined : { zoom }}>
         <header className="panel-head">
           <div className="panel-topline">
             <span className="branch-tag">
@@ -217,6 +240,30 @@ export const LessonPanel = memo(function LessonPanel({ curriculum: c, progressFi
             GitHub 에서 보기 <ExternalLink size={14} aria-hidden="true" />
           </a>
         </footer>
+        </div>
+      </div>
+      <div className="panel-zoombar" role="group" aria-label="강의 글·그림 확대">
+        <button
+          type="button"
+          className="icon-button"
+          onClick={() => setZoom((z) => clampZoom(z / ZOOM_STEP))}
+          disabled={zoom <= ZOOM_MIN}
+          aria-label="축소"
+        >
+          <Minus size={18} aria-hidden="true" />
+        </button>
+        <button type="button" className="panel-zoombar-reset" onClick={() => setZoom(1)} disabled={zoom === 1}>
+          {Math.round(zoom * 100)}%
+        </button>
+        <button
+          type="button"
+          className="icon-button"
+          onClick={() => setZoom((z) => clampZoom(z * ZOOM_STEP))}
+          disabled={zoom >= ZOOM_MAX}
+          aria-label="확대"
+        >
+          <Plus size={18} aria-hidden="true" />
+        </button>
       </div>
       <QuizReturn attempts={attempts} nav={quiz} />
     </aside>

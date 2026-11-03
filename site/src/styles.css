@@ -2061,76 +2061,60 @@ code {
   }
 }
 
-/* ---------- figure lightbox (zoom + pan viewer) ---------- */
+/* ---------- lesson reading zoom ---------- */
 
-.md-figure {
-  cursor: zoom-in;
+/* zoomed-up content overflows the scroll box; let it pan on both axes like a normal scrollable page */
+.panel-scroll.is-zoomed {
+  overflow: auto;
 }
 
-.lightbox {
-  position: fixed;
-  inset: 0;
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(2, 4, 10, 0.9);
-  backdrop-filter: blur(2px);
-}
-
-.lightbox-stage {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  touch-action: none;
-}
-
-.lightbox-img {
-  max-width: 92vw;
-  max-height: 86vh;
-  user-select: none;
-  -webkit-user-drag: none;
-  /* let every drag/wheel reach the stage so pan works when pressing on the image */
-  pointer-events: none;
-  will-change: transform;
-}
-
-.lightbox-toolbar {
+/* a small floating control, bottom-right of the panel, to zoom the lesson in and out */
+.panel-zoombar {
   position: absolute;
-  top: 16px;
+  z-index: 2;
   right: 16px;
-  z-index: 1;
+  bottom: 16px;
   display: flex;
-  gap: 8px;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--surface, rgba(20, 24, 34, 0.92));
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(6px);
 }
 
-.lightbox-toolbar button {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.08);
-  color: #fff;
-  font-size: 18px;
-  line-height: 1;
+.panel-zoombar .icon-button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.panel-zoombar-reset {
+  min-width: 48px;
+  padding: 0 6px;
+  border: 0;
+  background: transparent;
+  color: var(--text, inherit);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
   cursor: pointer;
 }
 
-.lightbox-toolbar button:hover {
-  background: rgba(255, 255, 255, 0.16);
+.panel-zoombar-reset:disabled {
+  cursor: default;
+  opacity: 0.7;
 }
 
-.lightbox-hint {
-  position: absolute;
-  bottom: 18px;
-  left: 50%;
-  transform: translateX(-50%);
-  margin: 0;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 13px;
-  white-space: nowrap;
-  pointer-events: none;
+/* keep the zoom control clear of the quiz-return bar when it is shown */
+.panel.has-quiz-return .panel-zoombar {
+  bottom: 72px;
+}
+
+@media (max-width: 720px) {
+  .panel-zoombar {
+    right: 12px;
+    bottom: 12px;
+  }
 }

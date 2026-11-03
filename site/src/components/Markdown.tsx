@@ -1,12 +1,11 @@
 import type { Element, Root } from 'hast'
 import { toJsxRuntime, type Components } from 'hast-util-to-jsx-runtime'
 import { Check, X } from './icons'
-import { Children, isValidElement, useMemo, useState, type ReactNode } from 'react'
+import { Children, isValidElement, useMemo, type ReactNode } from 'react'
 import { Fragment, jsx, jsxs } from 'react/jsx-runtime'
 import { CONFIG } from '../config'
 import { boldLead } from '../curriculum/hast'
 import { assetUrl } from '../curriculum/load'
-import { Lightbox } from './Lightbox'
 
 const LESSON_LINK = /^\.\.\/([a-z0-9-]+)\/(README\.md)?$/
 
@@ -58,8 +57,6 @@ interface Props {
  */
 export function Markdown({ lessonId, tree, inline = false }: Props) {
   const blob = `${CONFIG.repoUrl}/blob/${CONFIG.repoBranch}/lessons/${lessonId}/`
-  // a clicked figure opens in a zoom/pan viewer
-  const [zoom, setZoom] = useState<{ src: string; alt: string } | null>(null)
 
   const components: Components = {
     a({ href = '', children, ...rest }) {
@@ -95,17 +92,7 @@ export function Markdown({ lessonId, tree, inline = false }: Props) {
     },
     img({ src = '', alt = '' }) {
       const url = /^[a-z]+:/i.test(src) ? src : assetUrl(lessonId, src)
-      if (inline) return <img src={url} alt={alt} loading="lazy" />
-      // click to open the figure in a zoom/pan viewer
-      return (
-        <img
-          src={url}
-          alt={alt}
-          loading="lazy"
-          className="md-figure"
-          onClick={() => setZoom({ src: url, alt })}
-        />
-      )
+      return <img src={url} alt={alt} loading="lazy" className={inline ? undefined : 'md-figure'} />
     },
     h1: () => null,
     ...(inline && { p: ({ children }: { children?: ReactNode }) => <span>{children}</span> }),
@@ -153,10 +140,5 @@ export function Markdown({ lessonId, tree, inline = false }: Props) {
     [tree, lessonId, inline],
   )
   const Wrapper = inline ? 'span' : 'div'
-  return (
-    <>
-      <Wrapper className={inline ? 'markdown-inline' : 'markdown'}>{content}</Wrapper>
-      {zoom && <Lightbox src={zoom.src} alt={zoom.alt} onClose={() => setZoom(null)} />}
-    </>
-  )
+  return <Wrapper className={inline ? 'markdown-inline' : 'markdown'}>{content}</Wrapper>
 }
