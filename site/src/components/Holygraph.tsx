@@ -145,16 +145,29 @@ export function Holygraph({
     svg.on('wheel.zoom', null).on('dblclick.zoom', null)
 
     const onWheel = (e: WheelEvent) => {
-      e.preventDefault()
       if (e.ctrlKey) {
-        // touchpad pinch → zoom toward the pointer
+        // touchpad pinch → zoom the map toward the pointer
+        e.preventDefault()
         const box = svgEl.getBoundingClientRect()
         z.scaleBy(svg, Math.pow(2, -e.deltaY * 0.01), [e.clientX - box.left, e.clientY - box.top])
-      } else {
-        // two-finger scroll → pan (1:1 with screen pixels at any zoom)
-        const k = zoomTransform(svgEl).k
-        z.translateBy(svg, -e.deltaX / k, -e.deltaY / k)
+        return
       }
+      // when the page overflows (e.g. the browser is zoomed in), scroll the page
+      // like a normal page instead of panning the map
+      const se = document.scrollingElement
+      if (
+        se &&
+        (se.scrollHeight > se.clientHeight + 1 || se.scrollWidth > se.clientWidth + 1)
+      ) {
+        e.preventDefault()
+        se.scrollTop += e.deltaY
+        se.scrollLeft += e.deltaX
+        return
+      }
+      // otherwise two-finger scroll pans the map (1:1 with screen pixels at any zoom)
+      e.preventDefault()
+      const k = zoomTransform(svgEl).k
+      z.translateBy(svg, -e.deltaX / k, -e.deltaY / k)
     }
     svgEl.addEventListener('wheel', onWheel, { passive: false })
 
